@@ -1,0 +1,6 @@
+framework module Pods_Bang_BangUITests {
+  umbrella header "Pods-Bang-BangUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
