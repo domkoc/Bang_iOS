@@ -19,6 +19,8 @@
 		B48D973925EFD78000D2B82F /* MainGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48D973825EFD78000D2B82F /* MainGameView.swift */; };
 		B48D973E25EFD85600D2B82F /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48D973D25EFD85600D2B82F /* RulesView.swift */; };
 		B4A0C95125F523B30075C55E /* rulebook.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B4A0C95025F523B30075C55E /* rulebook.pdf */; };
+		B4A0C95C25F528670075C55E /* ModeSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A0C95B25F528670075C55E /* ModeSelectorView.swift */; };
+		B4A0C96125F52B190075C55E /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A0C96025F52B180075C55E /* GameMode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		B48D973825EFD78000D2B82F /* MainGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGameView.swift; sourceTree = "<group>"; };
 		B48D973D25EFD85600D2B82F /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
 		B4A0C95025F523B30075C55E /* rulebook.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = rulebook.pdf; sourceTree = "<group>"; };
+		B4A0C95B25F528670075C55E /* ModeSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectorView.swift; sourceTree = "<group>"; };
+		B4A0C96025F52B180075C55E /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +179,7 @@
 				B41AF44D25EFCC1300CBC5CC /* WelcomeView.swift */,
 				B48D973D25EFD85600D2B82F /* RulesView.swift */,
 				B48D973825EFD78000D2B82F /* MainGameView.swift */,
+				B4A0C95B25F528670075C55E /* ModeSelectorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -182,6 +187,7 @@
 		B4DF664A25F5043900484A88 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B4A0C96025F52B180075C55E /* GameMode.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -405,7 +411,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4A0C95C25F528670075C55E /* ModeSelectorView.swift in Sources */,
 				B41AF44E25EFCC1300CBC5CC /* WelcomeView.swift in Sources */,
+				B4A0C96125F52B190075C55E /* GameMode.swift in Sources */,
 				B48D973925EFD78000D2B82F /* MainGameView.swift in Sources */,
 				B41AF44C25EFCC1300CBC5CC /* BangApp.swift in Sources */,
 				B48D973E25EFD85600D2B82F /* RulesView.swift in Sources */,

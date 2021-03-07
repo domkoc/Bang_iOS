@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct BangApp: App {
+    
+    @State var playPressed = false
+    
     var body: some Scene {
         WindowGroup {
-            RulesView()
+            ModeSelectorView()
         }
     }
 }

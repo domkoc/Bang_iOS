@@ -9,6 +9,8 @@ import SwiftUI
 
 struct WelcomeView: View {
     
+    @Binding var selectedGameMode: GameMode
+    
     var body: some View {
         ZStack {
             Color.green
@@ -21,6 +23,7 @@ struct WelcomeView: View {
                         
                         Button(action: {
                             //RulesScreen()
+                            self.selectedGameMode = .rules
                         }) {
                             Image(systemName: "info.circle")
                                 .font(.largeTitle)
@@ -39,6 +42,7 @@ struct WelcomeView: View {
                 Spacer()
                 
                 Button(action: {
+                    self.selectedGameMode = .singlePlayer
                     //GameScreen()
                 }) {
                     Text("Play")
@@ -58,6 +62,6 @@ struct WelcomeView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeView()
+        WelcomeView(selectedGameMode: .constant(.menu))
     }
 }

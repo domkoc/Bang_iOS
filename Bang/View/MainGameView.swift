@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct MainGameView: View {
+    
+    @Binding var selectedGameMode: GameMode
+    
     var body: some View {
         ZStack {
             Color.green
@@ -19,6 +22,6 @@ struct MainGameView: View {
 
 struct GameScreen_Previews: PreviewProvider {
     static var previews: some View {
-        MainGameView()
+        MainGameView(selectedGameMode: .constant(.singlePlayer))
     }
 }
