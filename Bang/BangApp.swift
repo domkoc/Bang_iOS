@@ -11,7 +11,7 @@ import SwiftUI
 struct BangApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RulesView()
         }
     }
 }

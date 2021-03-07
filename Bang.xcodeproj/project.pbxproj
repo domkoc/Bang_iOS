@@ -11,11 +11,14 @@
 		45AD1485953C69009747C959 /* Pods_BangTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90AFCD276410939EF61FAEF /* Pods_BangTests.framework */; };
 		B0456289003C6F9C8B1CA3F2 /* Pods_Bang_BangUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B5C7458D0F48BF4AC23438 /* Pods_Bang_BangUITests.framework */; };
 		B41AF44C25EFCC1300CBC5CC /* BangApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41AF44B25EFCC1300CBC5CC /* BangApp.swift */; };
-		B41AF44E25EFCC1300CBC5CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41AF44D25EFCC1300CBC5CC /* ContentView.swift */; };
+		B41AF44E25EFCC1300CBC5CC /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41AF44D25EFCC1300CBC5CC /* WelcomeView.swift */; };
 		B41AF45025EFCC1400CBC5CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41AF44F25EFCC1400CBC5CC /* Assets.xcassets */; };
 		B41AF45325EFCC1400CBC5CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41AF45225EFCC1400CBC5CC /* Preview Assets.xcassets */; };
 		B41AF45E25EFCC1400CBC5CC /* BangTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41AF45D25EFCC1400CBC5CC /* BangTests.swift */; };
 		B41AF46925EFCC1400CBC5CC /* BangUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41AF46825EFCC1400CBC5CC /* BangUITests.swift */; };
+		B48D973925EFD78000D2B82F /* MainGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48D973825EFD78000D2B82F /* MainGameView.swift */; };
+		B48D973E25EFD85600D2B82F /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48D973D25EFD85600D2B82F /* RulesView.swift */; };
+		B4A0C95125F523B30075C55E /* rulebook.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B4A0C95025F523B30075C55E /* rulebook.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +50,7 @@
 		ADDCEA6006B73D64ABC7CC9E /* Pods_Bang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41AF44825EFCC1300CBC5CC /* Bang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41AF44B25EFCC1300CBC5CC /* BangApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BangApp.swift; sourceTree = "<group>"; };
-		B41AF44D25EFCC1300CBC5CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B41AF44D25EFCC1300CBC5CC /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		B41AF44F25EFCC1400CBC5CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B41AF45225EFCC1400CBC5CC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B41AF45425EFCC1400CBC5CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,6 +60,9 @@
 		B41AF46425EFCC1400CBC5CC /* BangUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BangUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41AF46825EFCC1400CBC5CC /* BangUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BangUITests.swift; sourceTree = "<group>"; };
 		B41AF46A25EFCC1400CBC5CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B48D973825EFD78000D2B82F /* MainGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGameView.swift; sourceTree = "<group>"; };
+		B48D973D25EFD85600D2B82F /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
+		B4A0C95025F523B30075C55E /* rulebook.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = rulebook.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,8 +131,11 @@
 		B41AF44A25EFCC1300CBC5CC /* Bang */ = {
 			isa = PBXGroup;
 			children = (
+				B4A0C95025F523B30075C55E /* rulebook.pdf */,
 				B41AF44B25EFCC1300CBC5CC /* BangApp.swift */,
-				B41AF44D25EFCC1300CBC5CC /* ContentView.swift */,
+				B4DF664A25F5043900484A88 /* Model */,
+				B4DF664625F5042B00484A88 /* View */,
+				B4DF664B25F5044200484A88 /* ViewModel */,
 				B41AF44F25EFCC1400CBC5CC /* Assets.xcassets */,
 				B41AF45425EFCC1400CBC5CC /* Info.plist */,
 				B41AF45125EFCC1400CBC5CC /* Preview Content */,
@@ -158,6 +167,30 @@
 				B41AF46A25EFCC1400CBC5CC /* Info.plist */,
 			);
 			path = BangUITests;
+			sourceTree = "<group>";
+		};
+		B4DF664625F5042B00484A88 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B41AF44D25EFCC1300CBC5CC /* WelcomeView.swift */,
+				B48D973D25EFD85600D2B82F /* RulesView.swift */,
+				B48D973825EFD78000D2B82F /* MainGameView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B4DF664A25F5043900484A88 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B4DF664B25F5044200484A88 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C2364BFB8740AC4DFE319246 /* Frameworks */ = {
@@ -277,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B41AF45325EFCC1400CBC5CC /* Preview Assets.xcassets in Resources */,
+				B4A0C95125F523B30075C55E /* rulebook.pdf in Resources */,
 				B41AF45025EFCC1400CBC5CC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,8 +405,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B41AF44E25EFCC1300CBC5CC /* ContentView.swift in Sources */,
+				B41AF44E25EFCC1300CBC5CC /* WelcomeView.swift in Sources */,
+				B48D973925EFD78000D2B82F /* MainGameView.swift in Sources */,
 				B41AF44C25EFCC1300CBC5CC /* BangApp.swift in Sources */,
+				B48D973E25EFD85600D2B82F /* RulesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
