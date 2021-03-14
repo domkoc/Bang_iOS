@@ -43,10 +43,10 @@ struct RulesView: View {
             PDFKitView(url: documentURL)
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
+                    ToolbarItem(placement: .principal) {
                         Text("Rules").font(Font.custom("FortDeath", size: 40))
                     }
-                    ToolbarItem(placement: .navigationBarTrailing) {
+                    ToolbarItem(placement: .confirmationAction) {
                         Button("Done", action: {
                             self.selectedGameMode = .menu
                         })
