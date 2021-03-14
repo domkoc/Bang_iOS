@@ -41,12 +41,23 @@ struct RulesView: View {
     var body: some View {
         NavigationView {
             PDFKitView(url: documentURL)
-                .navigationTitle("Rules")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Text("Rules").font(Font.custom("FortDeath", size: 40))
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button("Done", action: {
+                            self.selectedGameMode = .menu
+                        })
+                    }
+                }
+                /*.navigationTitle(Text("Rules"))
                 .navigationBarItems(trailing:
                                         Button("done", action: {
                                             self.selectedGameMode = .menu
                                         })
-                )
+                )*/
         }
     }
 }
