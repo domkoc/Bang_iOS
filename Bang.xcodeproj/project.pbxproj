@@ -16,6 +16,7 @@
 		B41AF45325EFCC1400CBC5CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41AF45225EFCC1400CBC5CC /* Preview Assets.xcassets */; };
 		B41AF45E25EFCC1400CBC5CC /* BangTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41AF45D25EFCC1400CBC5CC /* BangTests.swift */; };
 		B41AF46925EFCC1400CBC5CC /* BangUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41AF46825EFCC1400CBC5CC /* BangUITests.swift */; };
+		B426E2B526079A0D00F365A3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B426E2B426079A0D00F365A3 /* Game.swift */; };
 		B43F801725F9723300493AC3 /* FortDeath.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B43F801525F9723300493AC3 /* FortDeath.ttf */; };
 		B43F801825F9723300493AC3 /* FontLicenc.txt in Resources */ = {isa = PBXBuildFile; fileRef = B43F801625F9723300493AC3 /* FontLicenc.txt */; };
 		B44FA2E125FE7E6500356D77 /* DrawableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44FA2E025FE7E6500356D77 /* DrawableCard.swift */; };
@@ -69,6 +70,7 @@
 		B41AF46425EFCC1400CBC5CC /* BangUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BangUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41AF46825EFCC1400CBC5CC /* BangUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BangUITests.swift; sourceTree = "<group>"; };
 		B41AF46A25EFCC1400CBC5CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B426E2B426079A0D00F365A3 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		B43F801525F9723300493AC3 /* FortDeath.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FortDeath.ttf; sourceTree = "<group>"; };
 		B43F801625F9723300493AC3 /* FontLicenc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FontLicenc.txt; sourceTree = "<group>"; };
 		B44FA2E025FE7E6500356D77 /* DrawableCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawableCard.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 		B4DF664B25F5044200484A88 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				B426E2B426079A0D00F365A3 /* Game.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				B44FA2E925FE7E8B00356D77 /* CardSuit.swift in Sources */,
 				B44FA2FE25FE84F200356D77 /* CharacterName.swift in Sources */,
 				B44FA2F325FE81F700356D77 /* CardType.swift in Sources */,
+				B426E2B526079A0D00F365A3 /* Game.swift in Sources */,
 				B4A0C96125F52B190075C55E /* GameMode.swift in Sources */,
 				B48D973925EFD78000D2B82F /* MainGameView.swift in Sources */,
 				B41AF44C25EFCC1300CBC5CC /* BangApp.swift in Sources */,
