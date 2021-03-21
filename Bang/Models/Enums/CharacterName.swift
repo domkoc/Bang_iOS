@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Represents all available characters
 enum CharacterName: String {
     case bartCassidy = "Bart Cassidy"
     case kitCarlson = "Kit Carlson"
