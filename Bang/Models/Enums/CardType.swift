@@ -13,13 +13,20 @@ enum CardType {
     /// The orange cards, that are playable during a turn
     case playable
     
-    /// Represents the cards, that are equipable for a player
-    enum equipable {
-        
-        /// An equipable weapon
-        case weapon
-        
-        /// An equipable power
-        case power
+    /// An equipable weapon
+    case weapon
+    
+    /// An equipable power
+    case power
+    
+    /// Represents that the card is equipable for players or not
+    var isEquipable: Bool {
+        switch self {
+        case .playable:
+            return false
+        case .power, .weapon:
+            return true
+        }
     }
+    
 }

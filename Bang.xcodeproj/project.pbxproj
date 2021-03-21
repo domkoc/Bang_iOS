@@ -17,6 +17,7 @@
 		B41AF45E25EFCC1400CBC5CC /* BangTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41AF45D25EFCC1400CBC5CC /* BangTests.swift */; };
 		B41AF46925EFCC1400CBC5CC /* BangUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41AF46825EFCC1400CBC5CC /* BangUITests.swift */; };
 		B426E2B526079A0D00F365A3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B426E2B426079A0D00F365A3 /* Game.swift */; };
+		B426E2C326079E2A00F365A3 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = B426E2C226079E2A00F365A3 /* Character.swift */; };
 		B43F801725F9723300493AC3 /* FortDeath.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B43F801525F9723300493AC3 /* FortDeath.ttf */; };
 		B43F801825F9723300493AC3 /* FontLicenc.txt in Resources */ = {isa = PBXBuildFile; fileRef = B43F801625F9723300493AC3 /* FontLicenc.txt */; };
 		B44FA2E125FE7E6500356D77 /* DrawableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44FA2E025FE7E6500356D77 /* DrawableCard.swift */; };
@@ -29,6 +30,9 @@
 		B4A0C95125F523B30075C55E /* rulebook.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B4A0C95025F523B30075C55E /* rulebook.pdf */; };
 		B4A0C95C25F528670075C55E /* ModeSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A0C95B25F528670075C55E /* ModeSelectorView.swift */; };
 		B4A0C96125F52B190075C55E /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A0C96025F52B180075C55E /* GameMode.swift */; };
+		B4F2DA422607B4D200F0C378 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2DA412607B4D200F0C378 /* Player.swift */; };
+		B4F2DA482607B85400F0C378 /* WeaponCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2DA472607B85400F0C378 /* WeaponCard.swift */; };
+		B4F2DA4D2607B99A00F0C378 /* WeaponType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2DA4C2607B99A00F0C378 /* WeaponType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +75,7 @@
 		B41AF46825EFCC1400CBC5CC /* BangUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BangUITests.swift; sourceTree = "<group>"; };
 		B41AF46A25EFCC1400CBC5CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B426E2B426079A0D00F365A3 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		B426E2C226079E2A00F365A3 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		B43F801525F9723300493AC3 /* FortDeath.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FortDeath.ttf; sourceTree = "<group>"; };
 		B43F801625F9723300493AC3 /* FontLicenc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FontLicenc.txt; sourceTree = "<group>"; };
 		B44FA2E025FE7E6500356D77 /* DrawableCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawableCard.swift; sourceTree = "<group>"; };
@@ -83,6 +88,9 @@
 		B4A0C95025F523B30075C55E /* rulebook.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = rulebook.pdf; sourceTree = "<group>"; };
 		B4A0C95B25F528670075C55E /* ModeSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectorView.swift; sourceTree = "<group>"; };
 		B4A0C96025F52B180075C55E /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
+		B4F2DA412607B4D200F0C378 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		B4F2DA472607B85400F0C378 /* WeaponCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponCard.swift; sourceTree = "<group>"; };
+		B4F2DA4C2607B99A00F0C378 /* WeaponType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,15 +211,9 @@
 			isa = PBXGroup;
 			children = (
 				B44FA2E025FE7E6500356D77 /* DrawableCard.swift */,
+				B4F2DA472607B85400F0C378 /* WeaponCard.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		B44FA2D825FE7E1E00356D77 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		B44FA2DF25FE7E3900356D77 /* Enums */ = {
@@ -222,6 +224,7 @@
 				B44FA2ED25FE7E9700356D77 /* CardNumber.swift */,
 				B44FA2F225FE81F700356D77 /* CardType.swift */,
 				B44FA2FD25FE84F200356D77 /* CharacterName.swift */,
+				B4F2DA4C2607B99A00F0C378 /* WeaponType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -242,7 +245,6 @@
 			children = (
 				B44FA2DF25FE7E3900356D77 /* Enums */,
 				B44FA2D725FE7E1000356D77 /* Protocols */,
-				B44FA2D825FE7E1E00356D77 /* Classes */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -250,7 +252,9 @@
 		B4DF664B25F5044200484A88 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				B426E2C226079E2A00F365A3 /* Character.swift */,
 				B426E2B426079A0D00F365A3 /* Game.swift */,
+				B4F2DA412607B4D200F0C378 /* Player.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -469,9 +473,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B426E2C326079E2A00F365A3 /* Character.swift in Sources */,
+				B4F2DA4D2607B99A00F0C378 /* WeaponType.swift in Sources */,
 				B4A0C95C25F528670075C55E /* ModeSelectorView.swift in Sources */,
 				B44FA2E125FE7E6500356D77 /* DrawableCard.swift in Sources */,
 				B41AF44E25EFCC1300CBC5CC /* WelcomeView.swift in Sources */,
+				B4F2DA422607B4D200F0C378 /* Player.swift in Sources */,
+				B4F2DA482607B85400F0C378 /* WeaponCard.swift in Sources */,
 				B44FA2EE25FE7E9700356D77 /* CardNumber.swift in Sources */,
 				B44FA2E925FE7E8B00356D77 /* CardSuit.swift in Sources */,
 				B44FA2FE25FE84F200356D77 /* CharacterName.swift in Sources */,
