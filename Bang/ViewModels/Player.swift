@@ -8,16 +8,11 @@
 import Foundation
 
 class Player {
-    var character: Character
-    var hand: [DrawableCard] = []
+    public var character: Character
     init(character: Character, cardsDeck: inout [DrawableCard]) {
         self.character = character
         for _ in 0..<5 {
-            drawCard(cardsDeck: &cardsDeck)
+            self.character.drawCard(cardsDeck: &cardsDeck)
         }
-    }
-    
-    func drawCard(cardsDeck: inout [DrawableCard]) {
-        hand.append(character.DrawCard(cardsDeck: &cardsDeck))
     }
 }

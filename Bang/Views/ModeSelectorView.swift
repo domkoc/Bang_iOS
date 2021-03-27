@@ -10,17 +10,18 @@ import SwiftUI
 struct ModeSelectorView: View {
     
     @State var selectedGameMode: GameMode = .menu
+    @State var previousGameMode: GameMode = .menu
     
     var body: some View {
         return Group {
             
             switch selectedGameMode {
             case .singlePlayer, .multiPlayer:
-                MainGameView(selectedGameMode: $selectedGameMode)
+                MainGameView(selectedGameMode: $selectedGameMode, previousGameMode: $previousGameMode)
             case .rules:
-                RulesView(selectedGameMode: $selectedGameMode)
+                RulesView(selectedGameMode: $selectedGameMode, previousGameMode: $previousGameMode)
             case .menu:
-                WelcomeView(selectedGameMode: $selectedGameMode)
+                WelcomeView(selectedGameMode: $selectedGameMode, previousGameMode: $previousGameMode)
             }
         }
     }

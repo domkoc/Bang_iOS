@@ -10,6 +10,7 @@ import SwiftUI
 struct WelcomeView: View {
     
     @Binding var selectedGameMode: GameMode
+    @Binding var previousGameMode: GameMode
     
     var body: some View {
         VStack {
@@ -19,6 +20,7 @@ struct WelcomeView: View {
                     
                     Button(action: {
                         //RulesScreen()
+                        self.previousGameMode = .menu
                         self.selectedGameMode = .rules
                     }) {
                         Image(systemName: "info.circle")
@@ -31,20 +33,20 @@ struct WelcomeView: View {
                 Image("Logo")
                 .resizable()
                 .scaledToFit()
-                .cornerRadius(25)
                 .padding()
             }
             
             Spacer()
             
             Button(action: {
+                self.previousGameMode = .menu
                 self.selectedGameMode = .singlePlayer
                 //GameScreen()
             }) {
-                Text("Play")
-                    .font(.largeTitle)
+                Text("PlaY")
                     .foregroundColor(.white)
                     .padding(25)
+                    .font(Font.custom("FortDeath", size: 40))
             }
             .background(Color.red)
             .clipShape(Circle())
@@ -58,6 +60,6 @@ struct WelcomeView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeView(selectedGameMode: .constant(.menu))
+        WelcomeView(selectedGameMode: .constant(.menu), previousGameMode: .constant(.menu))
     }
 }

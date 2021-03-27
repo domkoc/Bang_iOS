@@ -36,6 +36,7 @@ struct PDFKitView: View {
 struct RulesView: View {
     
     @Binding var selectedGameMode: GameMode
+    @Binding var previousGameMode: GameMode
     
     let documentURL = Bundle.main.url(forResource: "rulebook", withExtension: "pdf")!
     var body: some View {
@@ -48,7 +49,7 @@ struct RulesView: View {
                     }
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Done", action: {
-                            self.selectedGameMode = .menu
+                            self.selectedGameMode = previousGameMode
                         })
                     }
                 }
@@ -64,6 +65,6 @@ struct RulesView: View {
 
 struct RulesScreen_Previews: PreviewProvider {
     static var previews: some View {
-        RulesView(selectedGameMode: .constant(.rules))
+        RulesView(selectedGameMode: .constant(.rules), previousGameMode: .constant(.menu))
     }
 }

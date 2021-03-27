@@ -1,0 +1,24 @@
+//
+//  BeerCard.swift
+//  Bang
+//
+//  Created by Kocka Dominik on 2021. 03. 27..
+//
+
+import Foundation
+import SwiftUI
+
+class BeerCard: PlayableCard {
+    override func play() -> Bool {
+        Game.shared.currentPlayer.character.gainLife()
+        return true
+    }
+    
+    override init(cardSuit: CardSuit, cardNumber: CardNumber) {
+        super.init(cardSuit: cardSuit, cardNumber: cardNumber)
+        var bangImgeText = "brownBeer_"
+        bangImgeText.append(cardNumber.rawValue)
+        bangImgeText.append(cardSuit.rawValue.first!)
+        cardImage = Image(bangImgeText)
+    }
+}
