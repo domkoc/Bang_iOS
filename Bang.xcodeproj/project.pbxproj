@@ -20,6 +20,7 @@
 		B426E2C326079E2A00F365A3 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = B426E2C226079E2A00F365A3 /* Character.swift */; };
 		B43F801725F9723300493AC3 /* FortDeath.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B43F801525F9723300493AC3 /* FortDeath.ttf */; };
 		B43F801825F9723300493AC3 /* FontLicenc.txt in Resources */ = {isa = PBXBuildFile; fileRef = B43F801625F9723300493AC3 /* FontLicenc.txt */; };
+		B4401268261DBF50005570B6 /* GatlingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4401267261DBF50005570B6 /* GatlingCard.swift */; };
 		B44FA2E125FE7E6500356D77 /* DrawableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44FA2E025FE7E6500356D77 /* DrawableCard.swift */; };
 		B44FA2E925FE7E8B00356D77 /* CardSuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44FA2E825FE7E8B00356D77 /* CardSuit.swift */; };
 		B44FA2EE25FE7E9700356D77 /* CardNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44FA2ED25FE7E9700356D77 /* CardNumber.swift */; };
@@ -29,11 +30,17 @@
 		B46557D7260F494100708D9C /* BangCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46557D6260F494100708D9C /* BangCard.swift */; };
 		B46557E3260F4F6400708D9C /* BeerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46557E2260F4F6400708D9C /* BeerCard.swift */; };
 		B46557E8260F506300708D9C /* CatBalouCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46557E7260F506300708D9C /* CatBalouCard.swift */; };
+		B475E6AD261DCE14001373E9 /* MissedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B475E6AC261DCE14001373E9 /* MissedCard.swift */; };
+		B475E6B8261DD776001373E9 /* BartCassidyCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B475E6B7261DD776001373E9 /* BartCassidyCharacter.swift */; };
 		B48D973925EFD78000D2B82F /* MainGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48D973825EFD78000D2B82F /* MainGameView.swift */; };
 		B48D973E25EFD85600D2B82F /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48D973D25EFD85600D2B82F /* RulesView.swift */; };
 		B4A0C95125F523B30075C55E /* rulebook.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B4A0C95025F523B30075C55E /* rulebook.pdf */; };
 		B4A0C95C25F528670075C55E /* ModeSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A0C95B25F528670075C55E /* ModeSelectorView.swift */; };
 		B4A0C96125F52B190075C55E /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A0C96025F52B180075C55E /* GameMode.swift */; };
+		B4AC37BA261DBA2900B98D26 /* SaloonCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AC37B9261DBA2900B98D26 /* SaloonCard.swift */; };
+		B4AC37BF261DBB3100B98D26 /* StageCoachCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AC37BE261DBB3100B98D26 /* StageCoachCard.swift */; };
+		B4AC37C4261DBC6800B98D26 /* WellsFargoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AC37C3261DBC6800B98D26 /* WellsFargoCard.swift */; };
+		B4AC37D2261DBCBE00B98D26 /* PanicCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AC37D1261DBCBE00B98D26 /* PanicCard.swift */; };
 		B4B76372260E22640083363E /* WeaponCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B76371260E22640083363E /* WeaponCard.swift */; };
 		B4B76377260E23CF0083363E /* PowerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B76376260E23CF0083363E /* PowerCard.swift */; };
 		B4B7637F260E24250083363E /* PowerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B7637E260E24250083363E /* PowerType.swift */; };
@@ -85,6 +92,7 @@
 		B426E2C226079E2A00F365A3 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		B43F801525F9723300493AC3 /* FortDeath.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FortDeath.ttf; sourceTree = "<group>"; };
 		B43F801625F9723300493AC3 /* FontLicenc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FontLicenc.txt; sourceTree = "<group>"; };
+		B4401267261DBF50005570B6 /* GatlingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatlingCard.swift; sourceTree = "<group>"; };
 		B44FA2E025FE7E6500356D77 /* DrawableCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawableCard.swift; sourceTree = "<group>"; };
 		B44FA2E825FE7E8B00356D77 /* CardSuit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSuit.swift; sourceTree = "<group>"; };
 		B44FA2ED25FE7E9700356D77 /* CardNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardNumber.swift; sourceTree = "<group>"; };
@@ -94,11 +102,17 @@
 		B46557D6260F494100708D9C /* BangCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BangCard.swift; sourceTree = "<group>"; };
 		B46557E2260F4F6400708D9C /* BeerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCard.swift; sourceTree = "<group>"; };
 		B46557E7260F506300708D9C /* CatBalouCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBalouCard.swift; sourceTree = "<group>"; };
+		B475E6AC261DCE14001373E9 /* MissedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissedCard.swift; sourceTree = "<group>"; };
+		B475E6B7261DD776001373E9 /* BartCassidyCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BartCassidyCharacter.swift; sourceTree = "<group>"; };
 		B48D973825EFD78000D2B82F /* MainGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGameView.swift; sourceTree = "<group>"; };
 		B48D973D25EFD85600D2B82F /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
 		B4A0C95025F523B30075C55E /* rulebook.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = rulebook.pdf; sourceTree = "<group>"; };
 		B4A0C95B25F528670075C55E /* ModeSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectorView.swift; sourceTree = "<group>"; };
 		B4A0C96025F52B180075C55E /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
+		B4AC37B9261DBA2900B98D26 /* SaloonCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaloonCard.swift; sourceTree = "<group>"; };
+		B4AC37BE261DBB3100B98D26 /* StageCoachCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageCoachCard.swift; sourceTree = "<group>"; };
+		B4AC37C3261DBC6800B98D26 /* WellsFargoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellsFargoCard.swift; sourceTree = "<group>"; };
+		B4AC37D1261DBCBE00B98D26 /* PanicCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanicCard.swift; sourceTree = "<group>"; };
 		B4B76371260E22640083363E /* WeaponCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponCard.swift; sourceTree = "<group>"; };
 		B4B76376260E23CF0083363E /* PowerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerCard.swift; sourceTree = "<group>"; };
 		B4B7637E260E24250083363E /* PowerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerType.swift; sourceTree = "<group>"; };
@@ -268,6 +282,12 @@
 				B46557D6260F494100708D9C /* BangCard.swift */,
 				B46557E2260F4F6400708D9C /* BeerCard.swift */,
 				B46557E7260F506300708D9C /* CatBalouCard.swift */,
+				B4AC37B9261DBA2900B98D26 /* SaloonCard.swift */,
+				B4AC37BE261DBB3100B98D26 /* StageCoachCard.swift */,
+				B4AC37C3261DBC6800B98D26 /* WellsFargoCard.swift */,
+				B4AC37D1261DBCBE00B98D26 /* PanicCard.swift */,
+				B4401267261DBF50005570B6 /* GatlingCard.swift */,
+				B475E6AC261DCE14001373E9 /* MissedCard.swift */,
 			);
 			path = Playable;
 			sourceTree = "<group>";
@@ -275,6 +295,7 @@
 		B4B76355260E04600083363E /* Characters */ = {
 			isa = PBXGroup;
 			children = (
+				B475E6B7261DD776001373E9 /* BartCassidyCharacter.swift */,
 			);
 			path = Characters;
 			sourceTree = "<group>";
@@ -552,12 +573,16 @@
 				B4B7637F260E24250083363E /* PowerType.swift in Sources */,
 				B46557E8260F506300708D9C /* CatBalouCard.swift in Sources */,
 				B4A0C95C25F528670075C55E /* ModeSelectorView.swift in Sources */,
+				B4AC37D2261DBCBE00B98D26 /* PanicCard.swift in Sources */,
 				B44FA2E125FE7E6500356D77 /* DrawableCard.swift in Sources */,
+				B4AC37BA261DBA2900B98D26 /* SaloonCard.swift in Sources */,
 				B46557C1260F484000708D9C /* PlayableCard.swift in Sources */,
+				B4AC37BF261DBB3100B98D26 /* StageCoachCard.swift in Sources */,
 				B41AF44E25EFCC1300CBC5CC /* WelcomeView.swift in Sources */,
 				B4F2DA422607B4D200F0C378 /* Player.swift in Sources */,
 				B4F2DA482607B85400F0C378 /* WeaponCardProtocol.swift in Sources */,
 				B44FA2EE25FE7E9700356D77 /* CardNumber.swift in Sources */,
+				B475E6AD261DCE14001373E9 /* MissedCard.swift in Sources */,
 				B4B76377260E23CF0083363E /* PowerCard.swift in Sources */,
 				B44FA2E925FE7E8B00356D77 /* CardSuit.swift in Sources */,
 				B44FA2FE25FE84F200356D77 /* CharacterType.swift in Sources */,
@@ -565,6 +590,9 @@
 				B426E2B526079A0D00F365A3 /* Game.swift in Sources */,
 				B4A0C96125F52B190075C55E /* GameMode.swift in Sources */,
 				B48D973925EFD78000D2B82F /* MainGameView.swift in Sources */,
+				B475E6B8261DD776001373E9 /* BartCassidyCharacter.swift in Sources */,
+				B4401268261DBF50005570B6 /* GatlingCard.swift in Sources */,
+				B4AC37C4261DBC6800B98D26 /* WellsFargoCard.swift in Sources */,
 				B41AF44C25EFCC1300CBC5CC /* BangApp.swift in Sources */,
 				B48D973E25EFD85600D2B82F /* RulesView.swift in Sources */,
 			);

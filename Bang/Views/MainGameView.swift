@@ -12,6 +12,7 @@ struct MainGameView: View {
     @Binding var selectedGameMode: GameMode
     @Binding var previousGameMode: GameMode
     @State var equipped = [PowerCard]()
+    @State var game: Game = Game.shared
     
     var body: some View {
         GeometryReader { container in
@@ -20,10 +21,17 @@ struct MainGameView: View {
                     Button(action: {
                         print("Pressed left pile")
                     }, label: {
-                        Image("backCard")
-                            .resizable()
-                            .scaledToFit()
-                            .cornerRadius(10)
+                        if game.playedDeck.isEmpty {
+                            Image("backCard")
+                                .resizable()
+                                .scaledToFit()
+                                .cornerRadius(10)
+                        } else {
+                            game.playedDeck.last!.cardImage
+                                .resizable()
+                                .scaledToFit()
+                                .cornerRadius(10)
+                        }
                     })
                     Button(action: {
                             print("Pressed right pile")

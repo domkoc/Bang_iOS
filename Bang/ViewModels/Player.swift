@@ -7,10 +7,20 @@
 
 import Foundation
 
-class Player {
+class Player: Equatable {
+    static func == (lhs: Player, rhs: Player) -> Bool {
+        return lhs.character.name == rhs.character.name
+    }
+    
     public var character: Character
-    init(character: Character, cardsDeck: inout [DrawableCard]) {
+    public var isInPlay: Bool
+    init(character: Character) {
         self.character = character
+        isInPlay = true
+        
+    }
+    
+    func fillHand(cardsDeck: inout [DrawableCard]) {
         for _ in 0..<5 {
             self.character.drawCard(cardsDeck: &cardsDeck)
         }
