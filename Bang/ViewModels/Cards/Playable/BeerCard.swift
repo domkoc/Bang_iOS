@@ -10,12 +10,12 @@ import SwiftUI
 
 class BeerCard: PlayableCard {
     override func play() -> Bool {
-        Game.shared.currentPlayer.character.gainLife()
+        Game.shared.currentPlayer!.character.gainLife()
         return true
     }
     
-    override init(cardSuit: CardSuit, cardNumber: CardNumber) {
-        super.init(cardSuit: cardSuit, cardNumber: cardNumber)
+    override init(cardSuit: CardSuit, cardNumber: CardNumber, cardName: PlayableType) {
+        super.init(cardSuit: cardSuit, cardNumber: cardNumber, cardName: cardName)
         var bangImgeText = "brownBeer_"
         bangImgeText.append(cardNumber.rawValue)
         bangImgeText.append(cardSuit.rawValue.first!)

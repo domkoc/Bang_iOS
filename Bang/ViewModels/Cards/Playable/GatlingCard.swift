@@ -18,8 +18,8 @@ class GatlingCard: PlayableCard {
         return true
     }
     
-    override init(cardSuit: CardSuit, cardNumber: CardNumber) {
-        super.init(cardSuit: cardSuit, cardNumber: cardNumber)
+    override init(cardSuit: CardSuit, cardNumber: CardNumber, cardName: PlayableType) {
+        super.init(cardSuit: cardSuit, cardNumber: cardNumber, cardName: cardName)
         var bangImgeText = "brownGatling_"
         bangImgeText.append(cardNumber.rawValue)
         bangImgeText.append(cardSuit.rawValue.first!)

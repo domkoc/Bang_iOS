@@ -8,17 +8,14 @@
 import Foundation
 
 class BartCassidyCharacter: Character {
-    var name: CharacterType = .bartCassidy
     
-    var maxLifeCount: Int = 4
+    override init(name: CharacterType = .bartCassidy, maxLifeCount: Int = 4) throws {
+        try super.init(name: name, maxLifeCount: maxLifeCount)
+    }
     
-    var weapon: WeaponCard = WeaponCard(cardSuit: .Spades, cardNumber: .Ace, weaponType: .colt)
-    
-    var life: Int = 4
-    
-    var hand: [DrawableCard] = []
-    
-    var equippedPowers: [PowerCard] = []
-    
+    override func takeLife() {
+        super.takeLife()
+        drawCard()
+    }
     
 }

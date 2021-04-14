@@ -22,4 +22,6 @@ protocol DrawableCard/*: Identifiable*/ {
     
     /// The type of the card
     var cardImage: Image { get }
+    
+    func play() -> Bool
 }

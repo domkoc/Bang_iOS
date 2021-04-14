@@ -21,8 +21,8 @@ class Player: Equatable {
     }
     
     func fillHand(cardsDeck: inout [DrawableCard]) {
-        for _ in 0..<5 {
-            self.character.drawCard(cardsDeck: &cardsDeck)
+        for _ in character.hand.count..<character.life {
+            self.character.drawCard()
         }
     }
 }

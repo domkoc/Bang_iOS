@@ -24,4 +24,8 @@ class WeaponCard: DrawableCard {
         self.cardNumber = cardNumber
         self.weaponType = weaponType
     }
+    
+    func play() -> Bool {
+        return false
+    }
 }

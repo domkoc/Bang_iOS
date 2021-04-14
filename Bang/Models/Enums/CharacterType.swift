@@ -25,6 +25,7 @@ enum CharacterType: String {
     case roseDoolan = "Rose Doo lan"
     case jourdonnais = "Jourdonnais"
     case sidKetchum = "Sid Ketchum"
+    case none = "error"
     
     var characterDescription: String {
             switch self {
@@ -60,6 +61,8 @@ enum CharacterType: String {
                 return ("Valahányszor rálőnek BANG! kártyával, húzhat egy lapot. Ha kőrt húz, a lövés nem talált.")
             case .sidKetchum:
                 return ("Ha eldob két lapot, visszanyer 1 életpontot.")
+            case .none:
+                return ("Nem sikerült a karakter inicializálása")
             }
         }
 }

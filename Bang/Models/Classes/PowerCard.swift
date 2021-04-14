@@ -23,4 +23,8 @@ class PowerCard: DrawableCard {
         self.cardNumber = cardNumber
         self.powerType = powerType
     }
+    
+    func play() -> Bool {
+        return false
+    }
 }

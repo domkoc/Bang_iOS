@@ -7,32 +7,83 @@
 
 import Foundation
 
-protocol Character {
-    var name: CharacterType { get }
-    var maxLifeCount: Int { get }
-    var weapon: WeaponCard { get set }
-    var life: Int { get set }
-    var hand: [DrawableCard] { get set }
-    var equippedPowers: [PowerCard] { get set }
-}
-
-extension Character {
-    mutating func drawCard(cardsDeck: inout [DrawableCard], n: Int = 1) {
-        for _ in 0..<n {
-            if hand.count < life {
-                hand.append(cardsDeck.popLast()!)
-            }
+class Character {
+    
+    let name: CharacterType
+    let maxLifeCount: Int
+    var weapon: WeaponCard
+    var life: Int
+    var hand: [DrawableCard] = []
+    var equippedPowers: [PowerCard] = []
+    
+    init(name: CharacterType = .none, maxLifeCount: Int = 5) throws {
+        self.name = name
+        self.maxLifeCount = maxLifeCount
+        self.weapon = WeaponCard(cardSuit: .Spades, cardNumber: .Ace, weaponType: .colt)
+        self.life = self.maxLifeCount
+        if name == .none {
+            throw RuntimeError.error(name.characterDescription)
         }
     }
-    mutating func takeLife() {
+    
+    func UseCard(index: Int, expectedPlayableCardTypes: [PlayableType] = [], expectedWeaponCardTypes: [WeaponType] = [], expectedPowerCardTypes: [PowerType] = []) -> Bool {
+        switch hand[index].cardType {
+        case .playable:
+            let card = hand[index] as! PlayableCard
+            if expectedPlayableCardTypes.contains(card.cardName) {
+                let currentCard = hand.remove(at: index)
+                Game.shared.playedDeck.append(currentCard)
+                return currentCard.play()
+            }
+        case .power:
+            let card = hand[index] as! PowerCard
+            if expectedPowerCardTypes.contains(card.powerType) {
+                let currentCard = hand.remove(at: index)
+                Game.shared.playedDeck.append(currentCard)
+                return currentCard.play()
+            }
+        case .weapon:
+            let card = hand[index] as! WeaponCard
+            if expectedWeaponCardTypes.contains(card.weaponType) {
+                let currentCard = hand.remove(at: index)
+                Game.shared.playedDeck.append(currentCard)
+                return currentCard.play()
+            }
+        }
+        return false
+    }
+    
+    func drawCard(n: Int = 1, keep: Bool = true, toPlayed: Bool = true) -> [DrawableCard] {
+        var newCards: [DrawableCard] = []
+        for _ in 0..<n {
+            if keep{
+                if hand.count < life {
+                    let card = Game.shared.drawDeck.popLast()!
+                    hand.append(card)
+                    newCards.append(card)
+                }
+            } else if toPlayed {
+                let card = Game.shared.drawDeck.popLast()!
+                Game.shared.playedDeck.append(card)
+                newCards.append(card)
+            } else {
+                newCards.append(Game.shared.drawDeck.popLast()!)
+            }
+        }
+        return newCards
+    }
+    
+    func takeLife() {
         life -= 1 // TODO: nem talált megnézése
     }
-    mutating func gainLife() {
+    
+    func gainLife() {
         if life < maxLifeCount {
             life += 1
         }
     }
-    mutating func takeCard(type: CardType, index: Int) -> DrawableCard? {
+    
+    func takeCard(type: CardType, index: Int) -> DrawableCard? {
         var tempCard: DrawableCard? = nil
         switch type {
         case .playable:
@@ -75,5 +126,9 @@ extension Character {
     
     func minusDistance() -> Int {
         return 0
+    }
+    
+    func usePower() -> Bool {
+        return false
     }
 }

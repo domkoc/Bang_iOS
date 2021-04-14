@@ -16,8 +16,8 @@ class CatBalouCard: PlayableCard {
         target.character.takeCard(type: .playable, index: 0)
         return true
     }
-    override init(cardSuit: CardSuit, cardNumber: CardNumber) {
-        super.init(cardSuit: cardSuit, cardNumber: cardNumber)
+    override init(cardSuit: CardSuit, cardNumber: CardNumber, cardName: PlayableType) {
+        super.init(cardSuit: cardSuit, cardNumber: cardNumber, cardName: cardName)
         var bangImgeText = "brownCatBalou_"
         bangImgeText.append(cardNumber.rawValue)
         bangImgeText.append(cardSuit.rawValue.first!)

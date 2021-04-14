@@ -11,12 +11,13 @@ import SwiftUI
 class BangCard: PlayableCard {
     
     
+    
     override func play() -> Bool {
         let target = Game.shared.currentTarget!
         let player = Game.shared.currentPlayer
-        let distance = player.character.calculateDistanceFrom(selfIndex: Game.shared.players.firstIndex(of: player)!,
+        let distance = player!.character.calculateDistanceFrom(selfIndex: Game.shared.players.firstIndex(of: player!)!,
                                                               targetIndex: Game.shared.players.firstIndex(of: target)!)
-        if  distance > player.character.weapon.weaponType.firePower{
+        if  distance > player!.character.weapon.weaponType.firePower{
             return false
         } else {
             target.character.takeLife()
@@ -24,8 +25,8 @@ class BangCard: PlayableCard {
         }
     }
     
-    override init(cardSuit: CardSuit, cardNumber: CardNumber) {
-        super.init(cardSuit: cardSuit, cardNumber: cardNumber)
+    override init(cardSuit: CardSuit, cardNumber: CardNumber, cardName: PlayableType) {
+        super.init(cardSuit: cardSuit, cardNumber: cardNumber, cardName: cardName)
         var bangImgeText = "brownBang_"
         bangImgeText.append(cardNumber.rawValue)
         bangImgeText.append(cardSuit.rawValue.first!)

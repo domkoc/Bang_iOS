@@ -15,10 +15,12 @@ class PlayableCard: DrawableCard {
     let cardNumber: CardNumber
     let cardType: CardType = CardType.playable
     var cardImage: Image = Image("backCard")
+    let cardName: PlayableType
     
-    init(cardSuit: CardSuit, cardNumber: CardNumber) {
+    init(cardSuit: CardSuit, cardNumber: CardNumber, cardName: PlayableType) {
         self.cardSuit = cardSuit
         self.cardNumber = cardNumber
+        self.cardName = cardName
     }
     
     func play() -> Bool {
