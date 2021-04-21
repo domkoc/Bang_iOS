@@ -9,8 +9,8 @@ import Foundation
 
 class LuckyDukeCharacter: Character {
     
-    override init(name: CharacterType = .luckyDuke, maxLifeCount: Int = 4) throws {
-        try super.init(name: name, maxLifeCount: maxLifeCount)
+    override init(name: CharacterType = .luckyDuke, maxLifeCount: Int = 4, cardImageName: String = "charaLuckyDuke") throws {
+        try super.init(name: .luckyDuke, maxLifeCount: 4, cardImageName: "charaLuckyDuke")
     }
     
     override func drawCard(n: Int = 1, keep: Bool = true, toPlayed: Bool = true) -> [DrawableCard] {

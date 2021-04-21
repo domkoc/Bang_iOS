@@ -14,7 +14,7 @@ class PlayableCard: DrawableCard {
     let cardSuit: CardSuit
     let cardNumber: CardNumber
     let cardType: CardType = CardType.playable
-    var cardImage: Image = Image("backCard")
+    var cardImageName: String = "backCard"
     let cardName: PlayableType
     
     init(cardSuit: CardSuit, cardNumber: CardNumber, cardName: PlayableType) {

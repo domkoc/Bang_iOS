@@ -20,11 +20,11 @@ struct Game {
         playedDeck = [DrawableCard]()
         drawDeck = [DrawableCard]()
         players = [Player]() // TODO: Init players
+        fillDeck()
         do {
-            players.append(Player(character: try BartCassidyCharacter()))
-            currentPlayer = players.first!  //players[0]
-            fillDeck()
-            currentPlayer!.fillHand(cardsDeck: &drawDeck)
+            addPlayer(player: Player(character: try CalamityJanetCharacter()))
+            addPlayer(player: Player(character: try BlackJackCharacter()))
+            addPlayer(player: Player(character: try KitCarlsonCharacter()))
         } catch RuntimeError.error(let error) {
             print(error) // TODO: Error handling
             currentPlayer = nil
@@ -32,6 +32,12 @@ struct Game {
             print("Unhandled init error in character.")
             currentPlayer = nil
         }
+    }
+    
+    mutating func addPlayer(player: Player) {
+        player.fillHand(cardsDeck: &drawDeck)
+        players.append(player)
+        currentPlayer = players[0]
     }
     
     mutating func drawFromDeck() -> DrawableCard {
@@ -137,5 +143,31 @@ struct Game {
         
         //Wells Fargo card:
         drawDeck.append(WellsFargoCard(cardSuit: .Hearths, cardNumber: .three, cardName: .wellsFargo))
+        drawDeck.shuffle()
+    }
+    
+    func allCharactersList() -> [Character] {
+        var list: [Character] = []
+        do {
+            list.append(try BartCassidyCharacter())
+            list.append(try JourdonnaisCharacter())
+            list.append(try JesseJonesCharacter())
+            list.append(try SlabTheKillerCharacter())
+            list.append(try PedroRamirezCharacter())
+            list.append(try VultureSamCharacter())
+            list.append(try WillyTheKidCharacter())
+            list.append(try RoseDoolanCharacter())
+            list.append(try SuzyLafayetteCharacter())
+            list.append(try SidKetchumCharacter())
+            list.append(try ElGringoCharacter())
+            list.append(try LuckyDukeCharacter())
+            list.append(try PaulRegretCharacter())
+            list.append(try KitCarlsonCharacter())
+            list.append(try BlackJackCharacter())
+            list.append(try CalamityJanetCharacter())
+        } catch {
+            print("Error creating characters list!")
+        }
+        return list
     }
 }

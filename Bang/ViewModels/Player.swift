@@ -7,10 +7,7 @@
 
 import Foundation
 
-class Player: Equatable {
-    static func == (lhs: Player, rhs: Player) -> Bool {
-        return lhs.character.name == rhs.character.name
-    }
+class Player {
     
     public var character: Character
     public var isInPlay: Bool
@@ -22,7 +19,17 @@ class Player: Equatable {
     
     func fillHand(cardsDeck: inout [DrawableCard]) {
         for _ in character.hand.count..<character.life {
-            self.character.drawCard()
+            self.character.hand.append(cardsDeck.popLast()!)
         }
+    }
+}
+
+extension Player: Equatable, Hashable, Identifiable {
+    static func == (lhs: Player, rhs: Player) -> Bool {
+        return lhs.character.name == rhs.character.name
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(character.name)
     }
 }

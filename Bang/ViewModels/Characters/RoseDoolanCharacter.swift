@@ -8,8 +8,8 @@
 import Foundation
 
 class RoseDoolanCharacter: Character {
-    override init(name: CharacterType = .roseDoolan, maxLifeCount: Int = 4) throws {
-            try super.init(name: name, maxLifeCount: maxLifeCount)
+    override init(name: CharacterType = .roseDoolan, maxLifeCount: Int = 4, cardImageName: String = "charaRoseDoolan") throws {
+        try super.init(name: .roseDoolan, maxLifeCount: 4, cardImageName: "charaRoseDoolan")
         }
     
     override func minusDistance() -> Int {

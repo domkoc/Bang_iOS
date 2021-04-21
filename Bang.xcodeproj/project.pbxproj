@@ -24,6 +24,7 @@
 		B41AF46925EFCC1400CBC5CC /* BangUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41AF46825EFCC1400CBC5CC /* BangUITests.swift */; };
 		B426E2B526079A0D00F365A3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B426E2B426079A0D00F365A3 /* Game.swift */; };
 		B426E2C326079E2A00F365A3 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = B426E2C226079E2A00F365A3 /* Character.swift */; };
+		B433275B263046EB0019030E /* CardSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B433275A263046EB0019030E /* CardSelectorView.swift */; };
 		B43F801725F9723300493AC3 /* FortDeath.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B43F801525F9723300493AC3 /* FortDeath.ttf */; };
 		B43F801825F9723300493AC3 /* FontLicenc.txt in Resources */ = {isa = PBXBuildFile; fileRef = B43F801625F9723300493AC3 /* FontLicenc.txt */; };
 		B4401268261DBF50005570B6 /* GatlingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4401267261DBF50005570B6 /* GatlingCard.swift */; };
@@ -36,6 +37,7 @@
 		B46557D7260F494100708D9C /* BangCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46557D6260F494100708D9C /* BangCard.swift */; };
 		B46557E3260F4F6400708D9C /* BeerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46557E2260F4F6400708D9C /* BeerCard.swift */; };
 		B46557E8260F506300708D9C /* CatBalouCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46557E7260F506300708D9C /* CatBalouCard.swift */; };
+		B46C12AA263025610074F922 /* CharacterSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C12A9263025610074F922 /* CharacterSelectorView.swift */; };
 		B475E6AD261DCE14001373E9 /* MissedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B475E6AC261DCE14001373E9 /* MissedCard.swift */; };
 		B475E6B8261DD776001373E9 /* BartCassidyCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B475E6B7261DD776001373E9 /* BartCassidyCharacter.swift */; };
 		B48D973925EFD78000D2B82F /* MainGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48D973825EFD78000D2B82F /* MainGameView.swift */; };
@@ -113,6 +115,7 @@
 		B41AF46A25EFCC1400CBC5CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B426E2B426079A0D00F365A3 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		B426E2C226079E2A00F365A3 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		B433275A263046EB0019030E /* CardSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSelectorView.swift; sourceTree = "<group>"; };
 		B43F801525F9723300493AC3 /* FortDeath.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FortDeath.ttf; sourceTree = "<group>"; };
 		B43F801625F9723300493AC3 /* FontLicenc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FontLicenc.txt; sourceTree = "<group>"; };
 		B4401267261DBF50005570B6 /* GatlingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatlingCard.swift; sourceTree = "<group>"; };
@@ -125,6 +128,7 @@
 		B46557D6260F494100708D9C /* BangCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BangCard.swift; sourceTree = "<group>"; };
 		B46557E2260F4F6400708D9C /* BeerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCard.swift; sourceTree = "<group>"; };
 		B46557E7260F506300708D9C /* CatBalouCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBalouCard.swift; sourceTree = "<group>"; };
+		B46C12A9263025610074F922 /* CharacterSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSelectorView.swift; sourceTree = "<group>"; };
 		B475E6AC261DCE14001373E9 /* MissedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissedCard.swift; sourceTree = "<group>"; };
 		B475E6B7261DD776001373E9 /* BartCassidyCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BartCassidyCharacter.swift; sourceTree = "<group>"; };
 		B48D973825EFD78000D2B82F /* MainGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGameView.swift; sourceTree = "<group>"; };
@@ -328,6 +332,25 @@
 			path = Playable;
 			sourceTree = "<group>";
 		};
+		B46C129E263025200074F922 /* MainViews */ = {
+			isa = PBXGroup;
+			children = (
+				B41AF44D25EFCC1300CBC5CC /* WelcomeView.swift */,
+				B48D973D25EFD85600D2B82F /* RulesView.swift */,
+				B48D973825EFD78000D2B82F /* MainGameView.swift */,
+			);
+			path = MainViews;
+			sourceTree = "<group>";
+		};
+		B46C12A8263025350074F922 /* SelectorViews */ = {
+			isa = PBXGroup;
+			children = (
+				B46C12A9263025610074F922 /* CharacterSelectorView.swift */,
+				B433275A263046EB0019030E /* CardSelectorView.swift */,
+			);
+			path = SelectorViews;
+			sourceTree = "<group>";
+		};
 		B4B76355260E04600083363E /* Characters */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,9 +377,8 @@
 		B4DF664625F5042B00484A88 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B41AF44D25EFCC1300CBC5CC /* WelcomeView.swift */,
-				B48D973D25EFD85600D2B82F /* RulesView.swift */,
-				B48D973825EFD78000D2B82F /* MainGameView.swift */,
+				B46C12A8263025350074F922 /* SelectorViews */,
+				B46C129E263025200074F922 /* MainViews */,
 				B4A0C95B25F528670075C55E /* ModeSelectorView.swift */,
 			);
 			path = Views;
@@ -628,6 +650,7 @@
 				B49550A526271E3800C4F411 /* RoseDoolanCharacter.swift in Sources */,
 				B4B7637F260E24250083363E /* PowerType.swift in Sources */,
 				B46557E8260F506300708D9C /* CatBalouCard.swift in Sources */,
+				B433275B263046EB0019030E /* CardSelectorView.swift in Sources */,
 				B4A0C95C25F528670075C55E /* ModeSelectorView.swift in Sources */,
 				B49550AA26271E9F00C4F411 /* SidKetchumCharacter.swift in Sources */,
 				B495509B26271C2000C4F411 /* PaulRegretCharacter.swift in Sources */,
@@ -647,6 +670,7 @@
 				B4B76377260E23CF0083363E /* PowerCard.swift in Sources */,
 				B49550B4262722E200C4F411 /* SuzyLafayetteCharacter.swift in Sources */,
 				B44FA2E925FE7E8B00356D77 /* CardSuit.swift in Sources */,
+				B46C12AA263025610074F922 /* CharacterSelectorView.swift in Sources */,
 				B44FA2FE25FE84F200356D77 /* CharacterType.swift in Sources */,
 				B49550BE2627254F00C4F411 /* WillyTheKidCharacter.swift in Sources */,
 				B40348BF2626F5CB00FC3486 /* BlackJackCharacter.swift in Sources */,

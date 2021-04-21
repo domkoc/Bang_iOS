@@ -21,6 +21,6 @@ class CatBalouCard: PlayableCard {
         var bangImgeText = "brownCatBalou_"
         bangImgeText.append(cardNumber.rawValue)
         bangImgeText.append(cardSuit.rawValue.first!)
-        cardImage = Image(bangImgeText)
+        cardImageName = bangImgeText
     }
 }

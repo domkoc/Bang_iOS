@@ -9,8 +9,8 @@ import Foundation
 
 class JourdonnaisCharacter: Character {
     
-    override init(name: CharacterType = .jourdonnais, maxLifeCount: Int = 4) throws {
-        try super.init(name: name, maxLifeCount: maxLifeCount)
+    override init(name: CharacterType = .jourdonnais, maxLifeCount: Int = 4, cardImageName: String = "charaJourdonnais") throws {
+        try super.init(name: .jourdonnais, maxLifeCount: 4, cardImageName: "charaJourdonnais")
     }
     
     override func takeLife() {

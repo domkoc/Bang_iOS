@@ -9,8 +9,8 @@ import Foundation
 
 class ElGringoCharacter: Character {
     
-    override init(name: CharacterType = .elGringo, maxLifeCount: Int = 3) throws {
-        try super.init(name: name, maxLifeCount: maxLifeCount)
+    override init(name: CharacterType = .elGringo, maxLifeCount: Int = 3, cardImageName: String = "charaElGringo") throws {
+        try super.init(name: .elGringo, maxLifeCount: 3, cardImageName: "charaElGringo")
     }
     
     override func takeLife() {

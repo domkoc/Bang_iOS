@@ -23,6 +23,6 @@ class GatlingCard: PlayableCard {
         var bangImgeText = "brownGatling_"
         bangImgeText.append(cardNumber.rawValue)
         bangImgeText.append(cardSuit.rawValue.first!)
-        cardImage = Image(bangImgeText)
+        cardImageName = bangImgeText
     }
 }

@@ -8,8 +8,8 @@
 import Foundation
 
 class SuzyLafayetteCharacter: Character {
-    override init(name: CharacterType = .suzyLafayette, maxLifeCount: Int = 4) throws {
-            try super.init(name: name, maxLifeCount: maxLifeCount)
+    override init(name: CharacterType = .suzyLafayette, maxLifeCount: Int = 4, cardImageName: String = "charaSuzyLafayette") throws {
+        try super.init(name: .suzyLafayette, maxLifeCount: 4, cardImageName: "charaSuzyLafayette")
     }
     
     override func takeCard(type: CardType, index: Int) -> DrawableCard? {

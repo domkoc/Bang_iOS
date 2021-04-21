@@ -15,12 +15,14 @@ class Character {
     var life: Int
     var hand: [DrawableCard] = []
     var equippedPowers: [PowerCard] = []
+    let cardImageName: String
     
-    init(name: CharacterType = .none, maxLifeCount: Int = 5) throws {
+    init(name: CharacterType = .none, maxLifeCount: Int = 5, cardImageName: String) throws {
         self.name = name
         self.maxLifeCount = maxLifeCount
         self.weapon = WeaponCard(cardSuit: .Spades, cardNumber: .Ace, weaponType: .colt)
         self.life = self.maxLifeCount
+        self.cardImageName = cardImageName
         if name == .none {
             throw RuntimeError.error(name.characterDescription)
         }
@@ -130,5 +132,16 @@ class Character {
     
     func usePower() -> Bool {
         return false
+    }
+}
+
+extension Character: Hashable {
+    
+    static func == (lhs: Character, rhs: Character) -> Bool {
+        return lhs.name.rawValue == rhs.name.rawValue
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(name.rawValue)
     }
 }

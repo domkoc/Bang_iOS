@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftUI
 
 /// Represents a drawable weapon type card
 class WeaponCard: DrawableCard {
@@ -16,7 +15,7 @@ class WeaponCard: DrawableCard {
     let cardNumber: CardNumber
     let weaponType: WeaponType
     let cardType: CardType = CardType.weapon
-    var cardImage: Image = Image("backCard")
+    var cardImageName: String = "backCard"
     
     
     init(cardSuit: CardSuit, cardNumber: CardNumber, weaponType: WeaponType) {

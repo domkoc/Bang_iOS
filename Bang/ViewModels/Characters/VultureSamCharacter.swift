@@ -8,8 +8,8 @@
 import Foundation
 
 class VultureSamCharacter: Character {
-    override init(name: CharacterType = .vultureSam, maxLifeCount: Int = 4) throws {
-            try super.init(name: name, maxLifeCount: maxLifeCount)
+    override init(name: CharacterType = .vultureSam, maxLifeCount: Int = 4, cardImageName: String = "charaVultureSam") throws {
+        try super.init(name: .vultureSam, maxLifeCount: 4, cardImageName: "charaVultureSam")
     }
     
     // TODO: Kieséskor odaadni neki a kártyákat

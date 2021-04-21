@@ -29,6 +29,6 @@ class PanicCard: PlayableCard {
         var bangImgeText = "brownPanic_"
         bangImgeText.append(cardNumber.rawValue)
         bangImgeText.append(cardSuit.rawValue.first!)
-        cardImage = Image(bangImgeText)
+        cardImageName = bangImgeText
     }
 }

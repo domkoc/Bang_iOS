@@ -8,8 +8,8 @@
 import Foundation
 
 class SidKetchumCharacter: Character {
-    override init(name: CharacterType = .sidKetchum, maxLifeCount: Int = 4) throws {
-            try super.init(name: name, maxLifeCount: maxLifeCount)
+    override init(name: CharacterType = .sidKetchum, maxLifeCount: Int = 4, cardImageName: String = "charaSidKetchum") throws {
+        try super.init(name: .sidKetchum, maxLifeCount: 4, cardImageName: "charaSidKetchum")
     }
     
     override func usePower() -> Bool {

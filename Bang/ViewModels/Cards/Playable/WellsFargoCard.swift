@@ -18,6 +18,6 @@ class WellsFargoCard: PlayableCard {
         var bangImgeText = "brownWellsFargo_"
         bangImgeText.append(cardNumber.rawValue)
         bangImgeText.append(cardSuit.rawValue.first!)
-        cardImage = Image(bangImgeText)
+        cardImageName = bangImgeText
     }
 }

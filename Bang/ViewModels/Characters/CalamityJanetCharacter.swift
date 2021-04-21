@@ -9,8 +9,8 @@ import Foundation
 
 class CalamityJanetCharacter: Character {
     
-    override init(name: CharacterType = .calamityJanet, maxLifeCount: Int = 4) throws {
-        try super.init(name: name, maxLifeCount: maxLifeCount)
+    override init(name: CharacterType = .calamityJanet, maxLifeCount: Int = 4, cardImageName: String = "charaCalamityJanet") throws {
+        try super.init(name: .calamityJanet, maxLifeCount: 4, cardImageName: "charaCalamityJanet")
     }
     
     override func UseCard(index: Int, expectedPlayableCardTypes: [PlayableType] = [], expectedWeaponCardTypes: [WeaponType] = [], expectedPowerCardTypes: [PowerType] = []) -> Bool {

@@ -30,6 +30,6 @@ class BangCard: PlayableCard {
         var bangImgeText = "brownBang_"
         bangImgeText.append(cardNumber.rawValue)
         bangImgeText.append(cardSuit.rawValue.first!)
-        cardImage = Image(bangImgeText)
+        cardImageName = bangImgeText
     }
 }

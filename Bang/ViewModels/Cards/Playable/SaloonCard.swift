@@ -20,6 +20,6 @@ class SaloonCard: PlayableCard {
         var bangImgeText = "brownSaloon_"
         bangImgeText.append(cardNumber.rawValue)
         bangImgeText.append(cardSuit.rawValue.first!)
-        cardImage = Image(bangImgeText)
+        cardImageName = bangImgeText
     }
 }

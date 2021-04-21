@@ -8,8 +8,8 @@
 import Foundation
 
 class SlabTheKillerCharacter: Character {
-    override init(name: CharacterType = .slabTheKiller, maxLifeCount: Int = 4) throws {
-            try super.init(name: name, maxLifeCount: maxLifeCount)
+    override init(name: CharacterType = .slabTheKiller, maxLifeCount: Int = 4, cardImageName: String = "charaSlabTheKiller") throws {
+        try super.init(name: .slabTheKiller, maxLifeCount: 4, cardImageName: "charaSlabTheKiller")
     }
     
     override func UseCard(index: Int, expectedPlayableCardTypes: [PlayableType] = [], expectedWeaponCardTypes: [WeaponType] = [], expectedPowerCardTypes: [PowerType] = []) -> Bool {

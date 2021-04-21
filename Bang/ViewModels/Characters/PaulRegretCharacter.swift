@@ -9,8 +9,8 @@ import Foundation
 
 class PaulRegretCharacter: Character {
     
-    override init(name: CharacterType = .paulRegret, maxLifeCount: Int = 3) throws {
-        try super.init(name: name, maxLifeCount: maxLifeCount)
+    override init(name: CharacterType = .paulRegret, maxLifeCount: Int = 3, cardImageName: String = "charaPaulRegret") throws {
+        try super.init(name: .paulRegret, maxLifeCount: 3, cardImageName: "charaPaulRegret")
     }
     
     override func defaultDistance() -> Int {
