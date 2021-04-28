@@ -22,5 +22,7 @@ protocol DrawableCard/*: Identifiable*/ {
     /// The type of the card
     var cardImageName: String { get }
     
+    var cardSheetType: sheetType? { get }
+    
     func play() -> Bool
 }

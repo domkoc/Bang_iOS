@@ -16,6 +16,7 @@ class PowerCard: DrawableCard {
     let powerType: PowerType
     let cardType: CardType = CardType.power
     var cardImageName: String = "backCard"
+    let cardSheetType: sheetType? = nil
     
     
     init(cardSuit: CardSuit, cardNumber: CardNumber, powerType: PowerType) {

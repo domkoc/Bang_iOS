@@ -7,33 +7,39 @@
 
 import SwiftUI
 
-struct CardSelectorView: View {
+struct PlayerCardSelectorView: View {
     
-    @Binding var selectedCharacter: Player?
+    @Binding var selectedPlayer: Player?
     @Binding var selectedCardIndex: Int?
     @Binding var isShowing: Bool
     //@State var characterChosen: Player? = nil
+    
+    var didSelect: () -> ()
     
     var body: some View {
         VStack {
             Spacer()
                 .frame(height: 8)
-            Picker(selection: $selectedCharacter, label: Text("Select a player"), content: {
+            Picker(selection: $selectedPlayer, label: Text("Select a player"), content: {
                 ForEach(Game.shared.players) { player in
                     Text(player.character.name.rawValue).tag(player as Player?)
                 }
             })
             .pickerStyle(SegmentedPickerStyle())
             Spacer()
-            if selectedCharacter != nil {
+            if selectedPlayer != nil {
                 ScrollView(.horizontal) {
                     LazyHStack {
-                        ForEach(0..<selectedCharacter!.character.hand.count, id: \.self) { i in
+                        ForEach(0..<selectedPlayer!.character.hand.count, id: \.self) { i in
                             Button(action: {
                                 selectedCardIndex = i
+                                Game.shared.currentTarget = selectedPlayer
+                                Game.shared.currentTargetCardIndex = selectedCardIndex
                                 isShowing = false
+                                
+                                didSelect()
                             })  {
-                                Image(selectedCharacter!.character.hand[i].cardImageName)
+                                Image(selectedPlayer!.character.hand[i].cardImageName)
                                     .resizable()
                                     .scaledToFit()
                                     .cornerRadius(10)
@@ -43,7 +49,7 @@ struct CardSelectorView: View {
                 }
             } else {
                 Button(action: {
-                    print(selectedCharacter)
+                    print(selectedPlayer)
                 }, label: {
                     Text("Válassz egy játékost!")
                 })
@@ -56,6 +62,6 @@ struct CardSelectorView: View {
 
 struct CardSelectorView_Previews: PreviewProvider {
     static var previews: some View {
-        CardSelectorView(selectedCharacter: .constant(nil), selectedCardIndex: .constant(nil), isShowing: .constant(true))
+        PlayerCardSelectorView(selectedPlayer: .constant(nil), selectedCardIndex: .constant(nil), isShowing: .constant(true), didSelect: {})
     }
 }

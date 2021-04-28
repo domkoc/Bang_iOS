@@ -24,7 +24,7 @@
 		B41AF46925EFCC1400CBC5CC /* BangUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41AF46825EFCC1400CBC5CC /* BangUITests.swift */; };
 		B426E2B526079A0D00F365A3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B426E2B426079A0D00F365A3 /* Game.swift */; };
 		B426E2C326079E2A00F365A3 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = B426E2C226079E2A00F365A3 /* Character.swift */; };
-		B433275B263046EB0019030E /* CardSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B433275A263046EB0019030E /* CardSelectorView.swift */; };
+		B433275B263046EB0019030E /* PlayerCardSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B433275A263046EB0019030E /* PlayerCardSelectorView.swift */; };
 		B43F801725F9723300493AC3 /* FortDeath.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B43F801525F9723300493AC3 /* FortDeath.ttf */; };
 		B43F801825F9723300493AC3 /* FontLicenc.txt in Resources */ = {isa = PBXBuildFile; fileRef = B43F801625F9723300493AC3 /* FontLicenc.txt */; };
 		B4401268261DBF50005570B6 /* GatlingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4401267261DBF50005570B6 /* GatlingCard.swift */; };
@@ -40,6 +40,8 @@
 		B46C12AA263025610074F922 /* CharacterSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C12A9263025610074F922 /* CharacterSelectorView.swift */; };
 		B475E6AD261DCE14001373E9 /* MissedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B475E6AC261DCE14001373E9 /* MissedCard.swift */; };
 		B475E6B8261DD776001373E9 /* BartCassidyCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B475E6B7261DD776001373E9 /* BartCassidyCharacter.swift */; };
+		B482EDE626398FF9000FCC2D /* sheetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B482EDE526398FF9000FCC2D /* sheetType.swift */; };
+		B482EDEE263992D4000FCC2D /* PlayerSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B482EDED263992D4000FCC2D /* PlayerSelectorView.swift */; };
 		B48D973925EFD78000D2B82F /* MainGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48D973825EFD78000D2B82F /* MainGameView.swift */; };
 		B48D973E25EFD85600D2B82F /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48D973D25EFD85600D2B82F /* RulesView.swift */; };
 		B4955091262715BF00C4F411 /* KitCarlsonCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4955090262715BF00C4F411 /* KitCarlsonCharacter.swift */; };
@@ -115,7 +117,7 @@
 		B41AF46A25EFCC1400CBC5CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B426E2B426079A0D00F365A3 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		B426E2C226079E2A00F365A3 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
-		B433275A263046EB0019030E /* CardSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSelectorView.swift; sourceTree = "<group>"; };
+		B433275A263046EB0019030E /* PlayerCardSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCardSelectorView.swift; sourceTree = "<group>"; };
 		B43F801525F9723300493AC3 /* FortDeath.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FortDeath.ttf; sourceTree = "<group>"; };
 		B43F801625F9723300493AC3 /* FontLicenc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FontLicenc.txt; sourceTree = "<group>"; };
 		B4401267261DBF50005570B6 /* GatlingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatlingCard.swift; sourceTree = "<group>"; };
@@ -131,6 +133,8 @@
 		B46C12A9263025610074F922 /* CharacterSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSelectorView.swift; sourceTree = "<group>"; };
 		B475E6AC261DCE14001373E9 /* MissedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissedCard.swift; sourceTree = "<group>"; };
 		B475E6B7261DD776001373E9 /* BartCassidyCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BartCassidyCharacter.swift; sourceTree = "<group>"; };
+		B482EDE526398FF9000FCC2D /* sheetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sheetType.swift; sourceTree = "<group>"; };
+		B482EDED263992D4000FCC2D /* PlayerSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectorView.swift; sourceTree = "<group>"; };
 		B48D973825EFD78000D2B82F /* MainGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGameView.swift; sourceTree = "<group>"; };
 		B48D973D25EFD85600D2B82F /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
 		B4955090262715BF00C4F411 /* KitCarlsonCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitCarlsonCharacter.swift; sourceTree = "<group>"; };
@@ -294,6 +298,7 @@
 				B4F2DA4C2607B99A00F0C378 /* WeaponType.swift */,
 				B4B7637E260E24250083363E /* PowerType.swift */,
 				B40348CB2626FCCB00FC3486 /* PlayableType.swift */,
+				B482EDE526398FF9000FCC2D /* sheetType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -346,7 +351,8 @@
 			isa = PBXGroup;
 			children = (
 				B46C12A9263025610074F922 /* CharacterSelectorView.swift */,
-				B433275A263046EB0019030E /* CardSelectorView.swift */,
+				B482EDED263992D4000FCC2D /* PlayerSelectorView.swift */,
+				B433275A263046EB0019030E /* PlayerCardSelectorView.swift */,
 			);
 			path = SelectorViews;
 			sourceTree = "<group>";
@@ -650,9 +656,10 @@
 				B49550A526271E3800C4F411 /* RoseDoolanCharacter.swift in Sources */,
 				B4B7637F260E24250083363E /* PowerType.swift in Sources */,
 				B46557E8260F506300708D9C /* CatBalouCard.swift in Sources */,
-				B433275B263046EB0019030E /* CardSelectorView.swift in Sources */,
+				B433275B263046EB0019030E /* PlayerCardSelectorView.swift in Sources */,
 				B4A0C95C25F528670075C55E /* ModeSelectorView.swift in Sources */,
 				B49550AA26271E9F00C4F411 /* SidKetchumCharacter.swift in Sources */,
+				B482EDEE263992D4000FCC2D /* PlayerSelectorView.swift in Sources */,
 				B495509B26271C2000C4F411 /* PaulRegretCharacter.swift in Sources */,
 				B4955091262715BF00C4F411 /* KitCarlsonCharacter.swift in Sources */,
 				B4AC37D2261DBCBE00B98D26 /* PanicCard.swift in Sources */,
@@ -663,6 +670,7 @@
 				B49550B9262724FD00C4F411 /* VultureSamCharacter.swift in Sources */,
 				B40348BA2626EF8E00FC3486 /* RuntimeError.swift in Sources */,
 				B41AF44E25EFCC1300CBC5CC /* WelcomeView.swift in Sources */,
+				B482EDE626398FF9000FCC2D /* sheetType.swift in Sources */,
 				B4F2DA422607B4D200F0C378 /* Player.swift in Sources */,
 				B4F2DA482607B85400F0C378 /* WeaponCardProtocol.swift in Sources */,
 				B44FA2EE25FE7E9700356D77 /* CardNumber.swift in Sources */,

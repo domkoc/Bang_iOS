@@ -10,13 +10,12 @@ import Foundation
 /// Represents a drawable weapon type card
 class WeaponCard: DrawableCard {
     
-    
     let cardSuit: CardSuit
     let cardNumber: CardNumber
     let weaponType: WeaponType
     let cardType: CardType = CardType.weapon
     var cardImageName: String = "backCard"
-    
+    let cardSheetType: sheetType? = nil
     
     init(cardSuit: CardSuit, cardNumber: CardNumber, weaponType: WeaponType) {
         self.cardSuit = cardSuit

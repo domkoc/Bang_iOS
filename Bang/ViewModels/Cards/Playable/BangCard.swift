@@ -10,8 +10,6 @@ import SwiftUI
 
 class BangCard: PlayableCard {
     
-    
-    
     override func play() -> Bool {
         let target = Game.shared.currentTarget!
         let player = Game.shared.currentPlayer
@@ -25,8 +23,8 @@ class BangCard: PlayableCard {
         }
     }
     
-    override init(cardSuit: CardSuit, cardNumber: CardNumber, cardName: PlayableType) {
-        super.init(cardSuit: cardSuit, cardNumber: cardNumber, cardName: cardName)
+    override init(cardSuit: CardSuit, cardNumber: CardNumber, cardName: PlayableType, cardSheetType: sheetType?) {
+        super.init(cardSuit: cardSuit, cardNumber: cardNumber, cardName: cardName, cardSheetType: cardSheetType)
         var bangImgeText = "brownBang_"
         bangImgeText.append(cardNumber.rawValue)
         bangImgeText.append(cardSuit.rawValue.first!)

@@ -14,6 +14,7 @@ struct Game {
     var playedDeck: [DrawableCard]
     var players: [Player]
     var currentTarget: Player?
+    var currentTargetCardIndex: Int?
     var currentPlayer: Player?
     
     init() {
@@ -36,7 +37,7 @@ struct Game {
     
     mutating func addPlayer(player: Player) {
         player.fillHand(cardsDeck: &drawDeck)
-        players.append(player)
+        players.insert(player, at: 0)
         currentPlayer = players[0]
     }
     
@@ -71,78 +72,78 @@ struct Game {
     
     mutating func fillDeck(advanced: Bool = false) {
         //Bang cards:
-        drawDeck.append(BangCard(cardSuit: .Clubs, cardNumber: .two, cardName: .bang))
-        drawDeck.append(BangCard(cardSuit: .Diamonds, cardNumber: .two, cardName: .bang))
-        drawDeck.append(BangCard(cardSuit: .Clubs, cardNumber: .three, cardName: .bang))
-        drawDeck.append(BangCard(cardSuit: .Diamonds, cardNumber: .three, cardName: .bang))
-        drawDeck.append(BangCard(cardSuit: .Clubs, cardNumber: .four, cardName: .bang))
-        drawDeck.append(BangCard(cardSuit: .Diamonds, cardNumber: .four, cardName: .bang))
-        drawDeck.append(BangCard(cardSuit: .Clubs, cardNumber: .five, cardName: .bang))
-        drawDeck.append(BangCard(cardSuit: .Diamonds, cardNumber: .five, cardName: .bang))
-        drawDeck.append(BangCard(cardSuit: .Clubs, cardNumber: .six, cardName: .bang))
-        drawDeck.append(BangCard(cardSuit: .Diamonds, cardNumber: .six, cardName: .bang))
-        drawDeck.append(BangCard(cardSuit: .Clubs, cardNumber: .seven, cardName: .bang))
-        drawDeck.append(BangCard(cardSuit: .Diamonds, cardNumber: .seven, cardName: .bang))
-        drawDeck.append(BangCard(cardSuit: .Clubs, cardNumber: .eight, cardName: .bang))
-        drawDeck.append(BangCard(cardSuit: .Diamonds, cardNumber: .eight, cardName: .bang))
-        drawDeck.append(BangCard(cardSuit: .Clubs, cardNumber: .nine, cardName: .bang))
-        drawDeck.append(BangCard(cardSuit: .Diamonds, cardNumber: .nine, cardName: .bang))
-        drawDeck.append(BangCard(cardSuit: .Diamonds, cardNumber: .ten, cardName: .bang))
-        drawDeck.append(BangCard(cardSuit: .Diamonds, cardNumber: .Ace, cardName: .bang))
-        drawDeck.append(BangCard(cardSuit: .Hearths, cardNumber: .Ace, cardName: .bang))
-        drawDeck.append(BangCard(cardSuit: .Spades, cardNumber: .Ace, cardName: .bang))
-        drawDeck.append(BangCard(cardSuit: .Diamonds, cardNumber: .Jack, cardName: .bang))
-        drawDeck.append(BangCard(cardSuit: .Diamonds, cardNumber: .King, cardName: .bang))
-        drawDeck.append(BangCard(cardSuit: .Hearths, cardNumber: .King, cardName: .bang))
-        drawDeck.append(BangCard(cardSuit: .Diamonds, cardNumber: .Queen, cardName: .bang))
-        drawDeck.append(BangCard(cardSuit: .Hearths, cardNumber: .Queen, cardName: .bang))
+        drawDeck.append(BangCard(cardSuit: .Clubs, cardNumber: .two, cardName: .bang, cardSheetType: .player))
+        drawDeck.append(BangCard(cardSuit: .Diamonds, cardNumber: .two, cardName: .bang, cardSheetType: .player))
+        drawDeck.append(BangCard(cardSuit: .Clubs, cardNumber: .three, cardName: .bang, cardSheetType: .player))
+        drawDeck.append(BangCard(cardSuit: .Diamonds, cardNumber: .three, cardName: .bang, cardSheetType: .player))
+        drawDeck.append(BangCard(cardSuit: .Clubs, cardNumber: .four, cardName: .bang, cardSheetType: .player))
+        drawDeck.append(BangCard(cardSuit: .Diamonds, cardNumber: .four, cardName: .bang, cardSheetType: .player))
+        drawDeck.append(BangCard(cardSuit: .Clubs, cardNumber: .five, cardName: .bang, cardSheetType: .player))
+        drawDeck.append(BangCard(cardSuit: .Diamonds, cardNumber: .five, cardName: .bang, cardSheetType: .player))
+        drawDeck.append(BangCard(cardSuit: .Clubs, cardNumber: .six, cardName: .bang, cardSheetType: .player))
+        drawDeck.append(BangCard(cardSuit: .Diamonds, cardNumber: .six, cardName: .bang, cardSheetType: .player))
+        drawDeck.append(BangCard(cardSuit: .Clubs, cardNumber: .seven, cardName: .bang, cardSheetType: .player))
+        drawDeck.append(BangCard(cardSuit: .Diamonds, cardNumber: .seven, cardName: .bang, cardSheetType: .player))
+        drawDeck.append(BangCard(cardSuit: .Clubs, cardNumber: .eight, cardName: .bang, cardSheetType: .player))
+        drawDeck.append(BangCard(cardSuit: .Diamonds, cardNumber: .eight, cardName: .bang, cardSheetType: .player))
+        drawDeck.append(BangCard(cardSuit: .Clubs, cardNumber: .nine, cardName: .bang, cardSheetType: .player))
+        drawDeck.append(BangCard(cardSuit: .Diamonds, cardNumber: .nine, cardName: .bang, cardSheetType: .player))
+        drawDeck.append(BangCard(cardSuit: .Diamonds, cardNumber: .ten, cardName: .bang, cardSheetType: .player))
+        drawDeck.append(BangCard(cardSuit: .Diamonds, cardNumber: .Ace, cardName: .bang, cardSheetType: .player))
+        drawDeck.append(BangCard(cardSuit: .Hearths, cardNumber: .Ace, cardName: .bang, cardSheetType: .player))
+        drawDeck.append(BangCard(cardSuit: .Spades, cardNumber: .Ace, cardName: .bang, cardSheetType: .player))
+        drawDeck.append(BangCard(cardSuit: .Diamonds, cardNumber: .Jack, cardName: .bang, cardSheetType: .player))
+        drawDeck.append(BangCard(cardSuit: .Diamonds, cardNumber: .King, cardName: .bang, cardSheetType: .player))
+        drawDeck.append(BangCard(cardSuit: .Hearths, cardNumber: .King, cardName: .bang, cardSheetType: .player))
+        drawDeck.append(BangCard(cardSuit: .Diamonds, cardNumber: .Queen, cardName: .bang, cardSheetType: .player))
+        drawDeck.append(BangCard(cardSuit: .Hearths, cardNumber: .Queen, cardName: .bang, cardSheetType: .player))
         
         //Beer cards:
-        drawDeck.append(BeerCard(cardSuit: .Hearths, cardNumber: .six, cardName: .beer))
-        drawDeck.append(BeerCard(cardSuit: .Hearths, cardNumber: .seven, cardName: .beer))
-        drawDeck.append(BeerCard(cardSuit: .Hearths, cardNumber: .eight, cardName: .beer))
-        drawDeck.append(BeerCard(cardSuit: .Hearths, cardNumber: .nine, cardName: .beer))
-        drawDeck.append(BeerCard(cardSuit: .Hearths, cardNumber: .ten, cardName: .beer))
-        drawDeck.append(BeerCard(cardSuit: .Hearths, cardNumber: .Jack, cardName: .beer))
+        drawDeck.append(BeerCard(cardSuit: .Hearths, cardNumber: .six, cardName: .beer, cardSheetType: nil))
+        drawDeck.append(BeerCard(cardSuit: .Hearths, cardNumber: .seven, cardName: .beer, cardSheetType: nil))
+        drawDeck.append(BeerCard(cardSuit: .Hearths, cardNumber: .eight, cardName: .beer, cardSheetType: nil))
+        drawDeck.append(BeerCard(cardSuit: .Hearths, cardNumber: .nine, cardName: .beer, cardSheetType: nil))
+        drawDeck.append(BeerCard(cardSuit: .Hearths, cardNumber: .ten, cardName: .beer, cardSheetType: nil))
+        drawDeck.append(BeerCard(cardSuit: .Hearths, cardNumber: .Jack, cardName: .beer, cardSheetType: nil))
         
         //Cat Balou cards:
-        drawDeck.append(CatBalouCard(cardSuit: .Diamonds, cardNumber: .nine, cardName: .catBalou))
-        drawDeck.append(CatBalouCard(cardSuit: .Diamonds, cardNumber: .ten, cardName: .catBalou))
-        drawDeck.append(CatBalouCard(cardSuit: .Diamonds, cardNumber: .Jack, cardName: .catBalou))
-        drawDeck.append(CatBalouCard(cardSuit: .Hearths, cardNumber: .King, cardName: .catBalou))
+        drawDeck.append(CatBalouCard(cardSuit: .Diamonds, cardNumber: .nine, cardName: .catBalou, cardSheetType: .playerCard))
+        drawDeck.append(CatBalouCard(cardSuit: .Diamonds, cardNumber: .ten, cardName: .catBalou, cardSheetType: .playerCard))
+        drawDeck.append(CatBalouCard(cardSuit: .Diamonds, cardNumber: .Jack, cardName: .catBalou, cardSheetType: .playerCard))
+        drawDeck.append(CatBalouCard(cardSuit: .Hearths, cardNumber: .King, cardName: .catBalou, cardSheetType: .playerCard))
         
         //Gatling card:
-        drawDeck.append(GatlingCard(cardSuit: .Hearths, cardNumber: .ten, cardName: .gatling))
+        drawDeck.append(GatlingCard(cardSuit: .Hearths, cardNumber: .ten, cardName: .gatling, cardSheetType: nil))
         
         //Missed cards:
-        drawDeck.append(MissedCard(cardSuit: .Spades, cardNumber: .two, cardName: .missed))
-        drawDeck.append(MissedCard(cardSuit: .Spades, cardNumber: .three, cardName: .missed))
-        drawDeck.append(MissedCard(cardSuit: .Spades, cardNumber: .four, cardName: .missed))
-        drawDeck.append(MissedCard(cardSuit: .Spades, cardNumber: .five, cardName: .missed))
-        drawDeck.append(MissedCard(cardSuit: .Spades, cardNumber: .six, cardName: .missed))
-        drawDeck.append(MissedCard(cardSuit: .Spades, cardNumber: .seven, cardName: .missed))
-        drawDeck.append(MissedCard(cardSuit: .Spades, cardNumber: .eight, cardName: .missed))
-        drawDeck.append(MissedCard(cardSuit: .Clubs, cardNumber: .ten, cardName: .missed))
-        drawDeck.append(MissedCard(cardSuit: .Clubs, cardNumber: .Ace, cardName: .missed))
-        drawDeck.append(MissedCard(cardSuit: .Clubs, cardNumber: .Jack, cardName: .missed))
-        drawDeck.append(MissedCard(cardSuit: .Clubs, cardNumber: .King, cardName: .missed))
-        drawDeck.append(MissedCard(cardSuit: .Clubs, cardNumber: .Queen, cardName: .missed))
+        drawDeck.append(MissedCard(cardSuit: .Spades, cardNumber: .two, cardName: .missed, cardSheetType: nil))
+        drawDeck.append(MissedCard(cardSuit: .Spades, cardNumber: .three, cardName: .missed, cardSheetType: nil))
+        drawDeck.append(MissedCard(cardSuit: .Spades, cardNumber: .four, cardName: .missed, cardSheetType: nil))
+        drawDeck.append(MissedCard(cardSuit: .Spades, cardNumber: .five, cardName: .missed, cardSheetType: nil))
+        drawDeck.append(MissedCard(cardSuit: .Spades, cardNumber: .six, cardName: .missed, cardSheetType: nil))
+        drawDeck.append(MissedCard(cardSuit: .Spades, cardNumber: .seven, cardName: .missed, cardSheetType: nil))
+        drawDeck.append(MissedCard(cardSuit: .Spades, cardNumber: .eight, cardName: .missed, cardSheetType: nil))
+        drawDeck.append(MissedCard(cardSuit: .Clubs, cardNumber: .ten, cardName: .missed, cardSheetType: nil))
+        drawDeck.append(MissedCard(cardSuit: .Clubs, cardNumber: .Ace, cardName: .missed, cardSheetType: nil))
+        drawDeck.append(MissedCard(cardSuit: .Clubs, cardNumber: .Jack, cardName: .missed, cardSheetType: nil))
+        drawDeck.append(MissedCard(cardSuit: .Clubs, cardNumber: .King, cardName: .missed, cardSheetType: nil))
+        drawDeck.append(MissedCard(cardSuit: .Clubs, cardNumber: .Queen, cardName: .missed, cardSheetType: nil))
         
         //Panic cards:
-        drawDeck.append(PanicCard(cardSuit: .Diamonds, cardNumber: .eight, cardName: .panic))
-        drawDeck.append(PanicCard(cardSuit: .Hearths, cardNumber: .Ace, cardName: .panic))
-        drawDeck.append(PanicCard(cardSuit: .Hearths, cardNumber: .Jack, cardName: .panic))
-        drawDeck.append(PanicCard(cardSuit: .Hearths, cardNumber: .Queen, cardName: .panic))
+        drawDeck.append(PanicCard(cardSuit: .Diamonds, cardNumber: .eight, cardName: .panic, cardSheetType: .playerCard))
+        drawDeck.append(PanicCard(cardSuit: .Hearths, cardNumber: .Ace, cardName: .panic, cardSheetType: .playerCard))
+        drawDeck.append(PanicCard(cardSuit: .Hearths, cardNumber: .Jack, cardName: .panic, cardSheetType: .playerCard))
+        drawDeck.append(PanicCard(cardSuit: .Hearths, cardNumber: .Queen, cardName: .panic, cardSheetType: .playerCard))
         
         //Saloon card:
-        drawDeck.append(SaloonCard(cardSuit: .Hearths, cardNumber: .five, cardName: .saloon))
+        drawDeck.append(SaloonCard(cardSuit: .Hearths, cardNumber: .five, cardName: .saloon, cardSheetType: nil))
         
         //Stage Coach cards:
-        drawDeck.append(StageCoachCard(cardSuit: .Spades, cardNumber: .nine, cardName: .stageCoach))
-        drawDeck.append(StageCoachCard(cardSuit: .Spades, cardNumber: .nine, cardName: .stageCoach))
+        drawDeck.append(StageCoachCard(cardSuit: .Spades, cardNumber: .nine, cardName: .stageCoach, cardSheetType: nil))
+        drawDeck.append(StageCoachCard(cardSuit: .Spades, cardNumber: .nine, cardName: .stageCoach, cardSheetType: nil))
         
         //Wells Fargo card:
-        drawDeck.append(WellsFargoCard(cardSuit: .Hearths, cardNumber: .three, cardName: .wellsFargo))
+        drawDeck.append(WellsFargoCard(cardSuit: .Hearths, cardNumber: .three, cardName: .wellsFargo, cardSheetType: nil))
         drawDeck.shuffle()
     }
     
