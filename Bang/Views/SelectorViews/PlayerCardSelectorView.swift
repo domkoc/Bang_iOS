@@ -60,7 +60,7 @@ struct PlayerCardSelectorView: View {
     }
 }
 
-struct CardSelectorView_Previews: PreviewProvider {
+struct PlayerCardSelectorView_Previews: PreviewProvider {
     static var previews: some View {
         PlayerCardSelectorView(selectedPlayer: .constant(nil), selectedCardIndex: .constant(nil), isShowing: .constant(true), didSelect: {})
     }

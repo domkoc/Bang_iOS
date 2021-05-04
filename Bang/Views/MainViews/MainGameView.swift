@@ -17,6 +17,7 @@ struct MainGameView: View {
     }
     
     @State var cards: [DrawableCard] = Game.shared.players.first!.character.hand
+    @State var equippedPowerCards: [PowerCard] = Game.shared.players.first!.character.equippedPowers
     @Binding var selectedGameMode: GameMode
     @Binding var previousGameMode: GameMode
     @State var equipped = [PowerCard]()
@@ -27,8 +28,9 @@ struct MainGameView: View {
     @State var showingCardSelectorView: Bool = false
     @State private var showingAlert = false
     @State private var showingSheet = false
-    @State private var shownSheetType: sheetType = .card
+    @State private var shownSelectorSheetType: sheetType = .card
     @State var selectedCard: DrawableCard? = nil
+    @State var playedCard: DrawableCard? = nil
     
     var character: Character
     
@@ -40,13 +42,13 @@ struct MainGameView: View {
                         print("Pressed left pile")
                     }, label: {
                         ZStack {
-                            if game.playedDeck.isEmpty {
+                            if playedCard == nil {
                                 Image("backCard")
                                     .resizable()
                                     .scaledToFit()
                                     .cornerRadius(10)
                             } else {
-                                Image(game.playedDeck.last!.cardImageName)
+                                Image(playedCard!.cardImageName)
                                     .resizable()
                                     .scaledToFit()
                                     .cornerRadius(10)
@@ -82,13 +84,19 @@ struct MainGameView: View {
                 HStack {
                     ForEach(0..<cards.count, id: \.self) { i in
                         Button(action: {
+                            game.currentPlayer = game.players.first
+                            playedCard = cards[i]
                             if cards[i].cardSheetType == nil {
                                 showingSheet = false
                                 cards[i].play()
                                 Game.shared.playedDeck.append(cards.remove(at: i))
+                                playedCard = Game.shared.simulateRound()
                             } else {
+                                if cards[i].cardSheetType == .card {
+                                    // TODO: ha kell ide , akkor a vélasztást implementálni, ha nem, akkor törölni
+                                }
                                 self.selectedCard = cards[i]
-                                shownSheetType = cards[i].cardSheetType!
+                                shownSelectorSheetType = cards[i].cardSheetType!
                                 showingSheet = true
                             }
                         })  {
@@ -100,84 +108,16 @@ struct MainGameView: View {
                             Alert(title: Text("A kártya jelenleg nem játszható ki!"), message: nil, dismissButton: .default(Text("OK")))
                         }
                     }
-                        
-                    /*
-                    Button(action: {
-                            print("Pressed 1st card")
-                    }, label: {
-                        Image("backCard")
-                            .resizable()
-                            .scaledToFit()
-                            .cornerRadius(10)
-                    })
-                    Button(action: {
-                        print("Pressed 2nd card")
-                    }, label: {
-                        Image("backCard")
-                            .resizable()
-                            .scaledToFit()
-                            .cornerRadius(10)
-                    })
-                    Button(action: {
-                        print("Pressed 3rd card")
-                    }, label: {
-                        Image("backCard")
-                            .resizable()
-                            .scaledToFit()
-                            .cornerRadius(10)
-                    })
-                    Button(action: {
-                        print("Pressed 4th card")
-                    }, label: {
-                        Image("backCard")
-                            .resizable()
-                            .scaledToFit()
-                            .cornerRadius(10)
-                    })
-                    Button(action: {
-                        print("Pressed 5th card")
-                    }, label: {
-                        Image("backCard")
-                            .resizable()
-                            .scaledToFit()
-                            .cornerRadius(10)
-                    })*/
                 }.frame(height: container.size.height / 3)
                 VStack {
                     HStack {
                         HStack{
-                            Button(action: {
-                                    print("Pressed 1st card")
-                            }, label: {
-                                Image("backCard")
+                            ForEach(0..<equippedPowerCards.count, id: \.self) { i in
+                                Image(equippedPowerCards[i].cardImageName)
                                     .resizable()
                                     .scaledToFit()
                                     .cornerRadius(10)
-                            })
-                            Button(action: {
-                                print("Pressed 2nd card")
-                            }, label: {
-                                Image("backCard")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .cornerRadius(10)
-                            })
-                            Button(action: {
-                                print("Pressed 3rd card")
-                            }, label: {
-                                Image("backCard")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .cornerRadius(10)
-                            })
-                            Button(action: {
-                                print("Pressed 4th card")
-                            }, label: {
-                                Image("backCard")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .cornerRadius(10)
-                            })
+                            }
                         }.frame(height: 60)
                         .padding(Edge.Set.leading, 10)
                         Spacer()
@@ -192,8 +132,14 @@ struct MainGameView: View {
                                     .scaledToFit()
                                 VStack {
                                     HStack{
-                                        
-                                    }.frame(height: container.size.height / 20)
+                                        Spacer().frame(width: container.size.width/11 - 8)
+                                        ForEach(0..<game.players.first!.character.life, id: \.self) { i in
+                                        Image("bullet")
+                                            .resizable()
+                                            .scaledToFit()
+                                        }.rotationEffect(.degrees(25))
+                                        Spacer()
+                                    }.frame(height: container.size.height / 30)
                                     HStack(spacing: 2) {
                                         Spacer().frame(width: container.size.width/11 - 8)
                                         Image(character.cardImageName)
@@ -252,7 +198,7 @@ struct MainGameView: View {
             }
             .background(Image("wood_maple").scaledToFill())
             .sheet(isPresented: $showingSheet, content: {
-                switch shownSheetType {
+                switch shownSelectorSheetType {
                 case .player, .card:
                     PlayerSelectorView(isShowing: $showingSheet, selectedPlayer: $selectedTarget, didSelect: {
                             selectedCard!.play()

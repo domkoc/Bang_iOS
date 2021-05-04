@@ -16,6 +16,7 @@
 		B40348CC2626FCCB00FC3486 /* PlayableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40348CB2626FCCB00FC3486 /* PlayableType.swift */; };
 		B40348D1262704EA00FC3486 /* ElGringoCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40348D0262704EA00FC3486 /* ElGringoCharacter.swift */; };
 		B40348D62627064A00FC3486 /* JesseJonesCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40348D52627064A00FC3486 /* JesseJonesCharacter.swift */; };
+		B413DE2A264141E50073E6D8 /* CardSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B413DE29264141E50073E6D8 /* CardSelectorView.swift */; };
 		B41AF44C25EFCC1300CBC5CC /* BangApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41AF44B25EFCC1300CBC5CC /* BangApp.swift */; };
 		B41AF44E25EFCC1300CBC5CC /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41AF44D25EFCC1300CBC5CC /* WelcomeView.swift */; };
 		B41AF45025EFCC1400CBC5CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41AF44F25EFCC1400CBC5CC /* Assets.xcassets */; };
@@ -103,6 +104,7 @@
 		B40348CB2626FCCB00FC3486 /* PlayableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayableType.swift; sourceTree = "<group>"; };
 		B40348D0262704EA00FC3486 /* ElGringoCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElGringoCharacter.swift; sourceTree = "<group>"; };
 		B40348D52627064A00FC3486 /* JesseJonesCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JesseJonesCharacter.swift; sourceTree = "<group>"; };
+		B413DE29264141E50073E6D8 /* CardSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSelectorView.swift; sourceTree = "<group>"; };
 		B41AF44825EFCC1300CBC5CC /* Bang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41AF44B25EFCC1300CBC5CC /* BangApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BangApp.swift; sourceTree = "<group>"; };
 		B41AF44D25EFCC1300CBC5CC /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 				B46C12A9263025610074F922 /* CharacterSelectorView.swift */,
 				B482EDED263992D4000FCC2D /* PlayerSelectorView.swift */,
 				B433275A263046EB0019030E /* PlayerCardSelectorView.swift */,
+				B413DE29264141E50073E6D8 /* CardSelectorView.swift */,
 			);
 			path = SelectorViews;
 			sourceTree = "<group>";
@@ -663,6 +666,7 @@
 				B495509B26271C2000C4F411 /* PaulRegretCharacter.swift in Sources */,
 				B4955091262715BF00C4F411 /* KitCarlsonCharacter.swift in Sources */,
 				B4AC37D2261DBCBE00B98D26 /* PanicCard.swift in Sources */,
+				B413DE2A264141E50073E6D8 /* CardSelectorView.swift in Sources */,
 				B44FA2E125FE7E6500356D77 /* DrawableCard.swift in Sources */,
 				B4AC37BA261DBA2900B98D26 /* SaloonCard.swift in Sources */,
 				B46557C1260F484000708D9C /* PlayableCard.swift in Sources */,

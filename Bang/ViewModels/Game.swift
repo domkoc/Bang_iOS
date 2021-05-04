@@ -16,6 +16,7 @@ struct Game {
     var currentTarget: Player?
     var currentTargetCardIndex: Int?
     var currentPlayer: Player?
+    var selectedCard: DrawableCard?
     
     init() {
         playedDeck = [DrawableCard]()
@@ -68,6 +69,28 @@ struct Game {
     mutating func selectTarget() {
         currentTarget = players[0]
         // TODO: Init players
+    }
+    
+    mutating func simulateRound() -> DrawableCard {
+        var lastCard: DrawableCard?
+        for i in 1..<players.count {
+            currentPlayer = players[i]
+            var card = players[i].character.hand.first!
+            switch card.cardSheetType {
+            case .player:
+                currentTarget = players.first
+            case .none:
+                break
+            case .card:
+                selectedCard = drawDeck.removeFirst()
+            case .playerCard:
+                currentTarget = players.first
+                selectedCard = currentTarget?.character.takeCard(type: .playable, index: 0)
+            }
+            lastCard = players[i].character.hand.first! as DrawableCard
+            playedDeck.append(players[i].character.hand.removeFirst())
+        }
+        return lastCard!
     }
     
     mutating func fillDeck(advanced: Bool = false) {
