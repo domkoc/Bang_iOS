@@ -76,7 +76,11 @@ class Character {
     }
     
     func takeLife() {
-        life -= 1 // TODO: nem talált megnézése
+        if let index = hand.firstIndex(where: { $0.cardImageName.starts(with: "brownMissed")}) {
+            hand.remove(at: index)
+        } else {
+            life -= 1
+        }
     }
     
     func gainLife() {
@@ -89,17 +93,29 @@ class Character {
         var tempCard: DrawableCard? = nil
         switch type {
         case .playable:
-            if index > hand.count {
-                print("Nagy szar van a Character takeCard-ban")
-            } else {
-                tempCard = hand.remove(at: index)
-            }
+            tempCard = hand.remove(at: index)
         case .power:
-            if index > equippedPowers.count {
-                print("Nagy szar van a Character takeCard-ban")
-            } else {
-                tempCard = equippedPowers.remove(at: index)
-            }
+            tempCard = equippedPowers.remove(at: index)
+        case .weapon:
+            tempCard = weapon
+            weapon = WeaponCard(cardSuit: .Clubs, cardNumber: .two, weaponType: .colt)
+        }
+        return tempCard
+    }
+    
+    func addCard(card: DrawableCard) {
+        if hand.count < life {
+            hand.append(card)
+        }
+    }
+    
+    func takeCard(type: CardType, card: DrawableCard) -> DrawableCard? {
+        var tempCard: DrawableCard? = nil
+        switch type {
+        case .playable:
+            tempCard = hand.remove(at: hand.firstIndex(where: { $0.cardImageName == card.cardImageName})!)
+        case .power:
+            tempCard = equippedPowers.remove(at: equippedPowers.firstIndex(where: { $0.cardImageName == card.cardImageName})!)
         case .weapon:
             tempCard = weapon
             weapon = WeaponCard(cardSuit: .Clubs, cardNumber: .two, weaponType: .colt)

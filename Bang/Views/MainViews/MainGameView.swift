@@ -31,6 +31,7 @@ struct MainGameView: View {
     @State private var shownSelectorSheetType: sheetType = .card
     @State var selectedCard: DrawableCard? = nil
     @State var playedCard: DrawableCard? = nil
+    @State var selectedCardType: CardType? = nil
     
     var character: Character
     
@@ -166,7 +167,7 @@ struct MainGameView: View {
                                 }) {
                                     Image(systemName: "questionmark.circle")
                                 }.sheet(isPresented: $showingCardSelectorView,content: {
-                                    PlayerCardSelectorView(selectedPlayer: $selectedTarget, selectedCardIndex: $selectedTargetCardIndex, isShowing: $showingCardSelectorView, didSelect: {
+                                    PlayerCardSelectorView(selectedPlayer: $selectedTarget, selectedCardIndex: $selectedTargetCardIndex, isShowing: $showingCardSelectorView, selectedCardType: $selectedCardType, didSelect: {
                                         print("Selected card")
                                     })
                                 })
@@ -207,7 +208,7 @@ struct MainGameView: View {
                         Game.shared.playedDeck.append(cards.remove(at: cards.firstIndex(where: {$0 as? PlayableCard == card})!))
                     })
                 case .playerCard:
-                    PlayerCardSelectorView(selectedPlayer: $selectedTarget, selectedCardIndex: $selectedTargetCardIndex, isShowing: $showingSheet, didSelect: {
+                    PlayerCardSelectorView(selectedPlayer: $selectedTarget, selectedCardIndex: $selectedTargetCardIndex, isShowing: $showingSheet, selectedCardType: $selectedCardType, didSelect: {
                             selectedCard!.play()
                         
                         let card: PlayableCard = selectedCard as! PlayableCard

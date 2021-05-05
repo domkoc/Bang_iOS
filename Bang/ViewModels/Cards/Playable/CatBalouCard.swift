@@ -10,10 +10,9 @@ import SwiftUI
 
 class CatBalouCard: PlayableCard {
     override func play() -> Bool {
-        Game.shared.selectTarget()
         let target = Game.shared.currentTarget!
-        //TODO: Select card to drop
-        target.character.takeCard(type: .playable, index: 0)
+        let card = target.character.takeCard(type: Game.shared.selectedCardType!, card: Game.shared.selectedCard!)
+        Game.shared.currentPlayer?.character.addCard(card: card!)
         return true
     }
     override init(cardSuit: CardSuit, cardNumber: CardNumber, cardName: PlayableType, cardSheetType: sheetType?) {

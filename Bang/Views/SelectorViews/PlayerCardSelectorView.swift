@@ -12,6 +12,7 @@ struct PlayerCardSelectorView: View {
     @Binding var selectedPlayer: Player?
     @Binding var selectedCardIndex: Int?
     @Binding var isShowing: Bool
+    @Binding var selectedCardType: CardType?
     //@State var characterChosen: Player? = nil
     
     var didSelect: () -> ()
@@ -36,6 +37,7 @@ struct PlayerCardSelectorView: View {
                                 Game.shared.currentTarget = selectedPlayer
                                 Game.shared.currentTargetCardIndex = selectedCardIndex
                                 isShowing = false
+                                selectedCardType = .playable
                                 
                                 didSelect()
                             })  {
@@ -45,14 +47,42 @@ struct PlayerCardSelectorView: View {
                                     .cornerRadius(10)
                             }
                         }
+                        ForEach(0..<selectedPlayer!.character.equippedPowers.count, id: \.self) { i in
+                            Button(action: {
+                                selectedCardIndex = i
+                                Game.shared.currentTarget = selectedPlayer
+                                Game.shared.currentTargetCardIndex = selectedCardIndex
+                                isShowing = false
+                                selectedCardType = .power
+                                
+                                didSelect()
+                            })  {
+                                Image(selectedPlayer!.character.equippedPowers[i].cardImageName)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .cornerRadius(10)
+                            }
+                        }
+                        if selectedPlayer!.character.weapon.weaponType != .colt {
+                            Button(action: {
+                                selectedCardIndex = 0
+                                Game.shared.currentTarget = selectedPlayer
+                                Game.shared.currentTargetCardIndex = selectedCardIndex
+                                isShowing = false
+                                selectedCardType = .weapon
+                                
+                                didSelect()
+                            })  {
+                                Image(selectedPlayer!.character.weapon.cardImageName)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .cornerRadius(10)
+                            }
+                        }
                     }
                 }
             } else {
-                Button(action: {
-                    print(selectedPlayer)
-                }, label: {
-                    Text("Válassz egy játékost!")
-                })
+                Text("Válassz egy játékost!")
             }
             Spacer()
         }
@@ -62,6 +92,6 @@ struct PlayerCardSelectorView: View {
 
 struct PlayerCardSelectorView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerCardSelectorView(selectedPlayer: .constant(nil), selectedCardIndex: .constant(nil), isShowing: .constant(true), didSelect: {})
+        PlayerCardSelectorView(selectedPlayer: .constant(nil), selectedCardIndex: .constant(nil), isShowing: .constant(true), selectedCardType: .constant(nil), didSelect: {})
     }
 }

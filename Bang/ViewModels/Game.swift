@@ -17,18 +17,19 @@ struct Game {
     var currentTargetCardIndex: Int?
     var currentPlayer: Player?
     var selectedCard: DrawableCard?
+    var selectedCardType: CardType?
     
     init() {
         playedDeck = [DrawableCard]()
         drawDeck = [DrawableCard]()
-        players = [Player]() // TODO: Init players
+        players = [Player]()
         fillDeck()
         do {
             addPlayer(player: Player(character: try CalamityJanetCharacter()))
             addPlayer(player: Player(character: try BlackJackCharacter()))
             addPlayer(player: Player(character: try KitCarlsonCharacter()))
         } catch RuntimeError.error(let error) {
-            print(error) // TODO: Error handling
+            print(error)
             currentPlayer = nil
         } catch {
             print("Unhandled init error in character.")
@@ -66,16 +67,11 @@ struct Game {
         playedDeck.append(top1)
     }
     
-    mutating func selectTarget() {
-        currentTarget = players[0]
-        // TODO: Init players
-    }
-    
     mutating func simulateRound() -> DrawableCard {
         var lastCard: DrawableCard?
         for i in 1..<players.count {
             currentPlayer = players[i]
-            var card = players[i].character.hand.first!
+            let card = players[i].character.hand.first!
             switch card.cardSheetType {
             case .player:
                 currentTarget = players.first
@@ -89,6 +85,9 @@ struct Game {
             }
             lastCard = players[i].character.hand.first! as DrawableCard
             playedDeck.append(players[i].character.hand.removeFirst())
+            for player in players {
+                player.character.drawCard(n: 2)
+            }
         }
         return lastCard!
     }
