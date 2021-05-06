@@ -60,16 +60,16 @@ class Character {
         for _ in 0..<n {
             if keep{
                 if hand.count < life {
-                    let card = Game.shared.drawDeck.popLast()!
+                    let card = Game.shared.drawDeck.removeLast()
                     hand.append(card)
                     newCards.append(card)
                 }
             } else if toPlayed {
-                let card = Game.shared.drawDeck.popLast()!
+                let card = Game.shared.drawDeck.removeLast()
                 Game.shared.playedDeck.append(card)
                 newCards.append(card)
             } else {
-                newCards.append(Game.shared.drawDeck.popLast()!)
+                newCards.append(Game.shared.drawDeck.removeLast())
             }
         }
         return newCards

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PlayerCardSelectorView: View {
     
-    @Binding var selectedPlayer: Player?
+    @State var selectedPlayer: Player?
     @Binding var selectedCardIndex: Int?
     @Binding var isShowing: Bool
     @Binding var selectedCardType: CardType?
@@ -37,6 +37,7 @@ struct PlayerCardSelectorView: View {
                                 Game.shared.currentTarget = selectedPlayer
                                 Game.shared.currentTargetCardIndex = selectedCardIndex
                                 isShowing = false
+                                Game.shared.selectedCardType = .playable
                                 selectedCardType = .playable
                                 
                                 didSelect()
@@ -53,6 +54,7 @@ struct PlayerCardSelectorView: View {
                                 Game.shared.currentTarget = selectedPlayer
                                 Game.shared.currentTargetCardIndex = selectedCardIndex
                                 isShowing = false
+                                Game.shared.selectedCardType = .power
                                 selectedCardType = .power
                                 
                                 didSelect()
@@ -69,6 +71,7 @@ struct PlayerCardSelectorView: View {
                                 Game.shared.currentTarget = selectedPlayer
                                 Game.shared.currentTargetCardIndex = selectedCardIndex
                                 isShowing = false
+                                Game.shared.selectedCardType = .weapon
                                 selectedCardType = .weapon
                                 
                                 didSelect()
@@ -92,6 +95,6 @@ struct PlayerCardSelectorView: View {
 
 struct PlayerCardSelectorView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerCardSelectorView(selectedPlayer: .constant(nil), selectedCardIndex: .constant(nil), isShowing: .constant(true), selectedCardType: .constant(nil), didSelect: {})
+        PlayerCardSelectorView(selectedPlayer: nil, selectedCardIndex: .constant(nil), isShowing: .constant(true), selectedCardType: .constant(nil), didSelect: {})
     }
 }

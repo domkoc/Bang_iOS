@@ -16,14 +16,12 @@ struct MainGameView: View {
         Game.shared.addPlayer(player: Player(character: character))
     }
     
-    @State var cards: [DrawableCard] = Game.shared.players.first!.character.hand
-    @State var equippedPowerCards: [PowerCard] = Game.shared.players.first!.character.equippedPowers
     @Binding var selectedGameMode: GameMode
     @Binding var previousGameMode: GameMode
     @State var equipped = [PowerCard]()
-    @State var game: Game = Game.shared
+    @ObservedObject var game: Game = Game.shared
     @State var weapon: WeaponCard? = nil
-    @State var selectedTarget: Player? = Game.shared.currentTarget
+    //@State var selectedTarget: Player? = Game.shared.currentTarget
     @State var selectedTargetCardIndex: Int? = 0
     @State var showingCardSelectorView: Bool = false
     @State private var showingAlert = false
@@ -83,25 +81,25 @@ struct MainGameView: View {
                     })
                 }.frame(height: container.size.height / 3)
                 HStack {
-                    ForEach(0..<cards.count, id: \.self) { i in
+                    ForEach(0..<game.players.first!.character.hand.count, id: \.self) { i in
                         Button(action: {
                             game.currentPlayer = game.players.first
-                            playedCard = cards[i]
-                            if cards[i].cardSheetType == nil {
+                            playedCard = game.players.first!.character.hand[i]
+                            if game.players.first!.character.hand[i].cardSheetType == nil {
                                 showingSheet = false
-                                cards[i].play()
-                                Game.shared.playedDeck.append(cards.remove(at: i))
-                                playedCard = Game.shared.simulateRound()
+                                game.players.first!.character.hand[i].play()
+                                Game.shared.playedDeck.append(game.players.first!.character.hand.remove(at: i))
+                                playedCard = simulateRound()
                             } else {
-                                if cards[i].cardSheetType == .card {
-                                    // TODO: ha kell ide , akkor a vélasztást implementálni, ha nem, akkor törölni
+                                if game.players.first!.character.hand[i].cardSheetType == .card {
+                                    // TODO: ha kell ide , akkor a választást implementálni, ha nem, akkor törölni
                                 }
-                                self.selectedCard = cards[i]
-                                shownSelectorSheetType = cards[i].cardSheetType!
+                                self.selectedCard = game.players.first!.character.hand[i]
+                                shownSelectorSheetType = game.players.first!.character.hand[i].cardSheetType!
                                 showingSheet = true
                             }
                         })  {
-                            Image(cards[i].cardImageName)
+                            Image(game.players.first!.character.hand[i].cardImageName)
                                 .resizable()
                                 .scaledToFit()
                                 .cornerRadius(10)
@@ -113,8 +111,8 @@ struct MainGameView: View {
                 VStack {
                     HStack {
                         HStack{
-                            ForEach(0..<equippedPowerCards.count, id: \.self) { i in
-                                Image(equippedPowerCards[i].cardImageName)
+                            ForEach(0..<game.players.first!.character.equippedPowers.count, id: \.self) { i in
+                                Image(game.players.first!.character.equippedPowers[i].cardImageName)
                                     .resizable()
                                     .scaledToFit()
                                     .cornerRadius(10)
@@ -167,7 +165,7 @@ struct MainGameView: View {
                                 }) {
                                     Image(systemName: "questionmark.circle")
                                 }.sheet(isPresented: $showingCardSelectorView,content: {
-                                    PlayerCardSelectorView(selectedPlayer: $selectedTarget, selectedCardIndex: $selectedTargetCardIndex, isShowing: $showingCardSelectorView, selectedCardType: $selectedCardType, didSelect: {
+                                    PlayerCardSelectorView(selectedPlayer: game.currentTarget, selectedCardIndex: $selectedTargetCardIndex, isShowing: $showingCardSelectorView, selectedCardType: $selectedCardType, didSelect: {
                                         print("Selected card")
                                     })
                                 })
@@ -198,26 +196,60 @@ struct MainGameView: View {
                 .frame(height: container.size.height / 3)
             }
             .background(Image("wood_maple").scaledToFill())
-            .sheet(isPresented: $showingSheet, content: {
+            .sheet(isPresented: $showingSheet, onDismiss: {
+                playedCard = simulateRound()
+            }, content: {
                 switch shownSelectorSheetType {
                 case .player, .card:
-                    PlayerSelectorView(isShowing: $showingSheet, selectedPlayer: $selectedTarget, didSelect: {
+                    PlayerSelectorView(isShowing: $showingSheet, selectedPlayer: $game.currentTarget, didSelect: {
                             selectedCard!.play()
                         let card: PlayableCard = selectedCard as! PlayableCard
                         
-                        Game.shared.playedDeck.append(cards.remove(at: cards.firstIndex(where: {$0 as? PlayableCard == card})!))
+                        game.playedDeck.append(game.players.first!.character.hand.remove(at: game.players.first!.character.hand.firstIndex(where: {$0 as? PlayableCard == card})!))
                     })
                 case .playerCard:
-                    PlayerCardSelectorView(selectedPlayer: $selectedTarget, selectedCardIndex: $selectedTargetCardIndex, isShowing: $showingSheet, selectedCardType: $selectedCardType, didSelect: {
+                    PlayerCardSelectorView(selectedPlayer: game.currentTarget, selectedCardIndex: $selectedTargetCardIndex, isShowing: $showingSheet, selectedCardType: $selectedCardType, didSelect: {
                             selectedCard!.play()
                         
                         let card: PlayableCard = selectedCard as! PlayableCard
                         
-                        Game.shared.playedDeck.append(cards.remove(at: cards.firstIndex(where: {$0 as? PlayableCard == card})!))
+                        game.playedDeck.append(game.players.first!.character.hand.remove(at: game.players.first!.character.hand.firstIndex(where: {$0 as? PlayableCard == card})!))
                     })
                 }
             })
         }
+    }
+    
+    func simulateRound() -> DrawableCard {
+        var lastCard: DrawableCard?
+        for i in 1..<game.players.count {
+            game.currentPlayer = game.players[i]
+            let card = game.players[i].character.hand.first!
+            switch card.cardSheetType {
+            case .player:
+                game.currentTarget = game.players.first
+            case .none:
+                break
+            case .card:
+                game.selectedCard = game.drawDeck.removeFirst()
+            case .playerCard:
+                game.currentTarget = game.players.first
+                game.selectedCard = game.currentTarget!.character.takeCard(type: .playable, index: 0)
+            }
+            lastCard = game.players[i].character.hand.first! as DrawableCard
+            game.playedDeck.append(game.players[i].character.hand.removeFirst())
+        }
+        print("Game.shared---------------------------------------")
+        print(Game.shared.players)
+        print("game---------------------------------------")
+        print(game.players)
+        for player in game.players {
+            if player == game.players.first! {
+                print(player.character.hand)
+            }
+            player.character.drawCard(n: 2)
+        }
+        return lastCard!
     }
 }
 

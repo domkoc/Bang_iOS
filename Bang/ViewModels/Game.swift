@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import SwiftUI
 
-struct Game {
+class Game: ObservableObject {
     static var shared = Game()
     
     var drawDeck: [DrawableCard]
@@ -37,13 +38,13 @@ struct Game {
         }
     }
     
-    mutating func addPlayer(player: Player) {
+    func addPlayer(player: Player) {
         player.fillHand(cardsDeck: &drawDeck)
         players.insert(player, at: 0)
         currentPlayer = players[0]
     }
     
-    mutating func drawFromDeck() -> DrawableCard {
+    func drawFromDeck() -> DrawableCard {
         if drawDeck.isEmpty {
             reFillDeck()
         }
@@ -55,7 +56,7 @@ struct Game {
     }
     
     
-    mutating func reFillDeck() {
+    func reFillDeck() {
         let top1 = playedDeck.popLast()!
         let top2 = playedDeck.popLast()!
         let top3 = playedDeck.popLast()!
@@ -67,32 +68,8 @@ struct Game {
         playedDeck.append(top1)
     }
     
-    mutating func simulateRound() -> DrawableCard {
-        var lastCard: DrawableCard?
-        for i in 1..<players.count {
-            currentPlayer = players[i]
-            let card = players[i].character.hand.first!
-            switch card.cardSheetType {
-            case .player:
-                currentTarget = players.first
-            case .none:
-                break
-            case .card:
-                selectedCard = drawDeck.removeFirst()
-            case .playerCard:
-                currentTarget = players.first
-                selectedCard = currentTarget?.character.takeCard(type: .playable, index: 0)
-            }
-            lastCard = players[i].character.hand.first! as DrawableCard
-            playedDeck.append(players[i].character.hand.removeFirst())
-            for player in players {
-                player.character.drawCard(n: 2)
-            }
-        }
-        return lastCard!
-    }
     
-    mutating func fillDeck(advanced: Bool = false) {
+    func fillDeck(advanced: Bool = false) {
         //Bang cards:
         drawDeck.append(BangCard(cardSuit: .Clubs, cardNumber: .two, cardName: .bang, cardSheetType: .player))
         drawDeck.append(BangCard(cardSuit: .Diamonds, cardNumber: .two, cardName: .bang, cardSheetType: .player))
