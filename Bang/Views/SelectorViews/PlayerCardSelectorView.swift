@@ -40,6 +40,7 @@ struct PlayerCardSelectorView: View {
                                 Game.shared.selectedCardType = .playable
                                 selectedCardType = .playable
                                 
+                                
                                 didSelect()
                             })  {
                                 Image(selectedPlayer!.character.hand[i].cardImageName)

@@ -14,7 +14,7 @@ class SidKetchumCharacter: Character {
     
     override func usePower() -> Bool {
         if hand.count >= 2 {
-            Game.shared.playedDeck.append(hand.remove(at: 0)) // TODO: Kiválasztani az eldobandó kártyákat
+            Game.shared.playedDeck.append(hand.remove(at: 0))
             Game.shared.playedDeck.append(hand.remove(at: 0))
             gainLife()
             return true

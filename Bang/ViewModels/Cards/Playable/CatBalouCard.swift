@@ -11,7 +11,7 @@ import SwiftUI
 class CatBalouCard: PlayableCard {
     override func play() -> Bool {
         let target = Game.shared.currentTarget!
-        let card = target.character.takeCard(type: Game.shared.selectedCardType!, card: Game.shared.selectedCard!)
+        let card = target.character.takeCard(type: Game.shared.selectedCardType!, index: Game.shared.currentTargetCardIndex!)
         Game.shared.currentPlayer?.character.addCard(card: card!)
         return true
     }

@@ -15,6 +15,6 @@ class ElGringoCharacter: Character {
     
     override func takeLife() {
         super.takeLife()
-        drawCard() //TODO: From hand
+        drawCard()
     }
 }

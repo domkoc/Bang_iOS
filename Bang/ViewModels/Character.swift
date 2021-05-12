@@ -57,6 +57,9 @@ class Character {
     
     func drawCard(n: Int = 1, keep: Bool = true, toPlayed: Bool = true) -> [DrawableCard] {
         var newCards: [DrawableCard] = []
+        if Game.shared.drawDeck.count < n {
+            Game.shared.reFillDeck()
+        }
         for _ in 0..<n {
             if keep{
                 if hand.count < life {

@@ -15,7 +15,7 @@ class PedroRamirezCharacter: Character {
     override func drawCard(n: Int = 1, keep: Bool = true, toPlayed: Bool = true) -> [DrawableCard] {
         if n == 2 && keep{
             var cards: [DrawableCard] = []
-            cards.append(contentsOf: drawCard(keep: keep, toPlayed: toPlayed)) // TODO: Dönteni és esetleg húzni az eldobottakból
+            cards.append(contentsOf: drawCard(keep: keep, toPlayed: toPlayed))
             cards.append(contentsOf: drawCard(keep: keep, toPlayed: toPlayed))
             return cards
         } else {

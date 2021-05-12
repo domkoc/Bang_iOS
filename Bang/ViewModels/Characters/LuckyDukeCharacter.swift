@@ -17,7 +17,6 @@ class LuckyDukeCharacter: Character {
         if n == 1 && keep == false{
             var cards: [DrawableCard] = []
             cards.append(contentsOf: super.drawCard(n: 2, keep: false))
-            // TODO: Választás a két kártya közül
             return cards
         } else {
             return super.drawCard(n: n, keep: keep)

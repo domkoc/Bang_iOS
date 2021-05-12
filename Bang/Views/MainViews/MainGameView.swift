@@ -24,6 +24,7 @@ struct MainGameView: View {
     //@State var selectedTarget: Player? = Game.shared.currentTarget
     @State var selectedTargetCardIndex: Int? = 0
     @State var showingCardSelectorView: Bool = false
+    @State var showingQuickHelpView: Bool = false
     @State private var showingAlert = false
     @State private var showingSheet = false
     @State private var shownSelectorSheetType: sheetType = .card
@@ -57,6 +58,7 @@ struct MainGameView: View {
                                 Text("#" + String(Game.shared.playedDeck.count))
                                     .fontWeight(.bold)
                                     .foregroundColor(Color.white)
+                                    .shadow(color: .black, radius: 1)
                                 Spacer()
                             }
                         }
@@ -74,6 +76,7 @@ struct MainGameView: View {
                                 Text("#" + String(Game.shared.drawDeck.count))
                                     .fontWeight(.bold)
                                     .foregroundColor(Color.white)
+                                    .shadow(color: .black, radius: 1)
                                 Spacer()
                             }
                                 
@@ -91,9 +94,6 @@ struct MainGameView: View {
                                 Game.shared.playedDeck.append(game.players.first!.character.hand.remove(at: i))
                                 playedCard = simulateRound()
                             } else {
-                                if game.players.first!.character.hand[i].cardSheetType == .card {
-                                    // TODO: ha kell ide , akkor a választást implementálni, ha nem, akkor törölni
-                                }
                                 self.selectedCard = game.players.first!.character.hand[i]
                                 shownSelectorSheetType = game.players.first!.character.hand[i].cardSheetType!
                                 showingSheet = true
@@ -160,14 +160,11 @@ struct MainGameView: View {
                             HStack {
                                 Button(action: {
                                     print("Pressed quick")
-                                    // TODO: Remove testing purpose
-                                    showingCardSelectorView.toggle()
+                                    showingQuickHelpView.toggle()
                                 }) {
                                     Image(systemName: "questionmark.circle")
-                                }.sheet(isPresented: $showingCardSelectorView,content: {
-                                    PlayerCardSelectorView(selectedPlayer: game.currentTarget, selectedCardIndex: $selectedTargetCardIndex, isShowing: $showingCardSelectorView, selectedCardType: $selectedCardType, didSelect: {
-                                        print("Selected card")
-                                    })
+                                }.sheet(isPresented: $showingSheet, content: {
+                                    QuickHelpView(isShowing: $showingQuickHelpView)
                                 })
                                 Spacer()
                                 Button(action: {

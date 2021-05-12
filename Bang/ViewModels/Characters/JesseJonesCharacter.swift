@@ -17,7 +17,7 @@ class JesseJonesCharacter: Character {
         var drawnCards: [DrawableCard] = []
         if n == 2 {
             drawnCards.append(contentsOf: drawCard())
-            drawnCards.append(contentsOf: drawCard()) // TODO: From others hand
+            drawnCards.append(contentsOf: drawCard())
             
         }
         else {

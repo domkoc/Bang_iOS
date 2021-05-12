@@ -20,7 +20,7 @@ class KitCarlsonCharacter: Character {
             cards.append(contentsOf: super.drawCard(keep: false, toPlayed: false))
             cards.append(contentsOf: super.drawCard(keep: false, toPlayed: false))
             Game.shared.drawDeck.append(cards.remove(at: 0))
-            hand.append(cards[0]) // TODO: Select which card to put back
+            hand.append(cards[0])
             hand.append(cards[1])
             return cards
         } else {

@@ -10,7 +10,6 @@ import SwiftUI
 
 class PanicCard: PlayableCard {
     override func play() -> Bool {
-        // TODO: Game.shared.selectTarget()
         let target = Game.shared.currentTarget!
         let player = Game.shared.currentPlayer
         let distance = player!.character.calculateDistanceFrom(selfIndex: Game.shared.players.firstIndex(of: player!)!,
@@ -18,8 +17,7 @@ class PanicCard: PlayableCard {
         if  distance > 1{
             return false
         } else {
-            //TODO: Select card to get
-            let card: DrawableCard = target.character.takeCard(type: .playable, index: 0)!
+            let card: DrawableCard = target.character.takeCard(type: Game.shared.selectedCardType!, index: Game.shared.currentTargetCardIndex!)!
             Game.shared.currentPlayer!.character.hand.append(card)
             return true
         }
