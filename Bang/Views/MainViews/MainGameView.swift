@@ -163,7 +163,7 @@ struct MainGameView: View {
                                     showingQuickHelpView.toggle()
                                 }) {
                                     Image(systemName: "questionmark.circle")
-                                }.sheet(isPresented: $showingSheet, content: {
+                                }.sheet(isPresented: $showingQuickHelpView, content: {
                                     QuickHelpView(isShowing: $showingQuickHelpView)
                                 })
                                 Spacer()
